@@ -1,9 +1,11 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import meteorosLogo from "../../assets/Logo.svg";
 
-const ExampleNavbar = () => {
+const Navbar = () => {
   return (
     <nav>
+      <img src={meteorosLogo} alt="MeteorosLogo" />
       <ul>
         <li>
           <Link to="/">Home</Link>
@@ -12,7 +14,7 @@ const ExampleNavbar = () => {
           <Link to="/explore">Explore</Link>
         </li>
         <li>
-          <Link to="/summary" summary>
+          <Link to="/summary">
             Summary
           </Link>
         </li>
@@ -21,4 +23,4 @@ const ExampleNavbar = () => {
   );
 };
 
-export default ExampleNavbar;
+export default Navbar;
