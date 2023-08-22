@@ -1,0 +1,47 @@
+$text-color : #FFFFFF;
+$underline-color : #FFD233;
+
+.navbar {
+    display: flex;
+    top: 0;
+    position: fixed;
+    justify-content: space-between;
+    padding: 20px 0px;
+    width: 100%;
+    background-color: inherit;
+    height: 50px;
+  }
+  
+  .navbar{
+    nav{
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+       ul{
+        display: flex;
+        flex: 3;
+        justify-content: flex-end;
+        align-items: center;
+        list-style: none;
+  
+        li{
+          margin-left: 20px;
+          margin-right: 20px;
+          padding: 5px;
+          a{
+            color: $text-color;
+            text-decoration: none;
+            letter-spacing: 0.05em;
+            padding-bottom: 3px;
+            font-size: 1.2em;
+          }
+  
+          a:hover{
+            border-bottom: 2px solid $underline-color
+          }
+        }
+       }
+    }
+  }
+  
+ 
