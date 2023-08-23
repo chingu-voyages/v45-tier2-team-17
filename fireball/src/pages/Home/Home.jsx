@@ -5,7 +5,7 @@ const Home = () => {
      <div className="home-tg"> <h1>Meteroite Explorer</h1></div>
     <div className="home-p"><p>How many Meteroite Landings in the 21st Century ? <span>123xx</span></p>
     <p>Want to Find out MORE? </p></div>
-    <button>Explore now</button>
+    <div className="cut-button"><button>Explore now</button></div>
   </div>;
 };
 

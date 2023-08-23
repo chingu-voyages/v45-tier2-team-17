@@ -36,11 +36,36 @@
         letter-spacing: .008em;
     }
 
+    .cut-button{
+        position:relative;
+        width: 233px;
+        height: 48px;
+        clip-path: polygon(20% 0%, 100% 0px, 100% 20%, 100.00% 63.34%, 92.44% 97.92%, 20% 100%, 0px 100%, 0px 0px);
+    }
     button{
+       
         width: 233px;
         height: 48px;
         border: 3px solid rgba(212, 213, 212, 0.3);
         background-color: #272A29;
         color: #fff;
+        font-weight: 600;
     }
+  
+      
+      .cut-button::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 90%;
+        transform: rotate(45deg);
+        width: 50px;
+        height: 50px;
+        background-color: inherit;/* Set the notch color to match the border */
+        border: 3px solid rgba(212, 213, 212, 0.3);
+        transition: background-color 0.3s ease;
+        margin-left: 10px;
+      }
+      
+
 }
