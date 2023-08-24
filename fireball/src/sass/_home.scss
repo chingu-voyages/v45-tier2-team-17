@@ -1,3 +1,17 @@
+@mixin box-corner($width ,$height){
+    min-width: $width;
+    min-height: $height;
+    text-align: center;
+    background:
+      linear-gradient(to right, rgb(255, 255, 255) 5px, transparent 5px) 0 100%,
+      linear-gradient(to left, rgb(255, 255, 255) 5px, transparent 5px) 100% 0,
+      linear-gradient(to bottom, rgb(255, 255, 255) 5px, transparent 5px) 100% 0,
+      linear-gradient(to top, rgb(255, 255, 255) 5px, transparent 5px) 0 100%;
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+}
+
+
 .home-cn{
     display: flex;
     flex-direction: column;
@@ -10,22 +24,14 @@
 }
 
 .home-tg{
-    width: 350px;
-    height: 80px;
-    text-align: center;
-    background:
-      linear-gradient(to right, rgb(255, 255, 255) 3px, transparent 3px) 0 100%,
-      linear-gradient(to left, rgb(255, 255, 255) 3px, transparent 3px) 100% 0,
-      linear-gradient(to bottom, rgb(255, 255, 255) 3px, transparent 3px) 100% 0,
-      linear-gradient(to top, rgb(255, 255, 255) 3px, transparent 3px) 0 100%;
-    background-repeat: no-repeat;
-    background-size: 15px 15px;
+    @include box-corner(350px,50px )
 }
 
 .home-cn{
     h1{
         font-weight: 300;
         letter-spacing: .105em;
+        margin: 0;
     }
     .home-p{
         margin-top: 50px;
@@ -33,7 +39,7 @@
     p{
         font-size: 2.2em;
         font-weight: 300;
-        letter-spacing: .008em;
+        letter-spacing: 0.12em;
     }
 
     .cut-button{
@@ -43,13 +49,15 @@
         clip-path: polygon(20% 0%, 100% 0px, 100% 20%, 100.00% 63.34%, 92.44% 97.92%, 20% 100%, 0px 100%, 0px 0px);
     }
     button{
-       
-        width: 233px;
-        height: 48px;
-        border: 3px solid rgba(212, 213, 212, 0.3);
+       cursor: pointer;
+        width: 100%;
+        height: 100%;
         background-color: #272A29;
         color: #fff;
         font-weight: 600;
+        border: 4px solid rgba(212, 213, 212, 0.3);
+        letter-spacing: .12em;
+                // border: 3px solid rgba(212, 213, 212, 0.3);
     }
   
       
@@ -61,11 +69,77 @@
         transform: rotate(45deg);
         width: 50px;
         height: 50px;
-        background-color: inherit;/* Set the notch color to match the border */
-        border: 3px solid rgba(212, 213, 212, 0.3);
-        transition: background-color 0.3s ease;
-        margin-left: 10px;
+        background-color: inherit;
+        // margin-left: 9px;
+        // border: 3px solid rgba(212, 213, 212, 0.3);
+        border: 4px solid rgba(212, 213, 212, 0.3);
+        margin-left: 7px;
       }
       
+
+}
+
+.home-title{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+    div{
+         margin-left: 25px;   
+        @include box-corner(150px,50px );
+        p{
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+    }
+}
+
+
+
+
+// Media queries for responsive design ----->
+
+@media only screen and (max-width: 768px) {
+    .home-cn{
+        p{
+        font-size: 1.9em;
+        }
+    }
+}
+
+
+/* Extra small devices (phones, 500px and down) */
+@media only screen and (max-width: 500px) {
+    .home-cn{
+        p{
+        font-size: 1.3em;
+        }
+
+        .cut-button{
+            width: 200px;
+            height: 48px;
+        }
+
+        .cut-button::after{
+            margin-left: 5px;
+        }
+    }
+
+    .home-title{
+        align-items: center;
+        div{   
+            @include box-corner(120px,36px );
+
+        }
+    }
+
+    .home-tg{
+        @include box-corner(300px,50px );
+        h1{
+            font-size: 1.8em;
+        }
+    }
+
+  
 
 }

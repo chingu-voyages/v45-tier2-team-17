@@ -1,5 +1,5 @@
 $text-color : #FFFFFF;
-$underline-color : #FFD233;
+$link-underline : 3px solid #FFD233 ;
 
 .navbar {
     display: flex;
@@ -21,7 +21,7 @@ $underline-color : #FFD233;
         display: flex;
         flex: 3;
         justify-content: flex-end;
-        align-items: center;
+        // align-items: center;
         list-style: none;
   
         li{
@@ -34,12 +34,22 @@ $underline-color : #FFD233;
             letter-spacing: 0.05em;
             padding-bottom: 3px;
             font-size: 1.2em;
+            transition: border-bottom 0.5ms;
           }
   
           a:hover{
-            border-bottom: 2px solid $underline-color
+            border-bottom: $link-underline;
+          }
+
+          .active-nav{
+            border-bottom:$link-underline;
           }
         }
+       }
+       img{
+        height: 65px;
+        width: 65px;
+        padding-left: 5px;
        }
     }
   }
