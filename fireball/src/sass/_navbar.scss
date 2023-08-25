@@ -21,7 +21,7 @@ $link-underline : 3px solid #FFD233 ;
         display: flex;
         flex: 3;
         justify-content: flex-end;
-        // align-items: center;
+        align-items: center;
         list-style: none;
   
         li{
@@ -54,4 +54,19 @@ $link-underline : 3px solid #FFD233 ;
     }
   }
   
- 
+@media only screen and (max-width: 500px){
+         .navbar{
+           nav{
+            ul{
+              li{
+                margin-left: 20px;
+                padding: 5px;
+
+                a{
+                  font-size: 1em;
+                }
+              }
+            }
+           }
+         }
+  }
