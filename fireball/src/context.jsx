@@ -64,7 +64,7 @@ export const AppProvider = ({ children }) => {
 
   return (
     <AppContext.Provider
-      value={{ ...state, updateFilters, clearFilters, filterData }}
+      value={{ ...state, updateFilters, clearFilters, filterData, fetchData }}
     >
       {children}
     </AppContext.Provider>
