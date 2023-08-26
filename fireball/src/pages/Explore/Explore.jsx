@@ -3,7 +3,10 @@ import { useGlobalContext } from "../../context";
 import Search from "../../Components/Search";
 
 const Explore = () => {
-  const { data } = useGlobalContext();
+  const { data, fetchData } = useGlobalContext();
+  useEffect(() => {
+    fetchData();
+  }, []);
   return (
     <div>
       <Search />

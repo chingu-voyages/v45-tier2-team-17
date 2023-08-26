@@ -62,12 +62,9 @@ export const AppProvider = ({ children }) => {
     dispatch({ type: FILTER_DATA });
   };
 
-  useEffect(() => {
-    fetchData();
-  }, []);
   return (
     <AppContext.Provider
-      value={{ ...state, updateFilters, clearFilters, filterData }}
+      value={{ ...state, updateFilters, clearFilters, filterData, fetchData }}
     >
       {children}
     </AppContext.Provider>
