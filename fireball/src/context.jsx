@@ -8,7 +8,6 @@ import {
   GET_DATA_SUCCESS,
   UPDATE_FILTERS,
 } from "./actions";
-
 import reducer from "./reducer";
 
 const url = "https://data.nasa.gov/resource/gh4g-9sfh.json";
@@ -65,7 +64,7 @@ export const AppProvider = ({ children }) => {
 
   return (
     <AppContext.Provider
-      value={{ ...state, updateFilters, clearFilters, filterData, fetchData }}
+      value={{ ...state, updateFilters, clearFilters, filterData }}
     >
       {children}
     </AppContext.Provider>

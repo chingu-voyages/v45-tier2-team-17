@@ -9,7 +9,6 @@ const Search = () => {
     e.preventDefault();
     filterData();
   };
-  
   return (
     <section className="form-container">
       <form
