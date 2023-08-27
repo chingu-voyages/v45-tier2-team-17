@@ -63,7 +63,7 @@ const reducer = (state, action) => {
 
     if (composition) {
       tempData = tempData.filter((item) =>
-        item.name.toLowerCase().includes(composition.toLowerCase())
+        item.recclass.toLowerCase().includes(composition.toLowerCase())
       );
     }
     tempData = tempData.filter((item) => item.mass <= mass);
