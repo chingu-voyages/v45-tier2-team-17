@@ -10,6 +10,7 @@ $link-underline : 3px solid #FFD233 ;
   width: 100%;
   background-color: inherit;
   height: 50px;
+  z-index: 2;
 }
 
 .nav {
@@ -62,7 +63,7 @@ $link-underline : 3px solid #FFD233 ;
 }
 
 
-@media (max-width:600px) {
+@media (max-width:400px) {
 
   .nav{
     flex-direction: column;
@@ -98,7 +99,7 @@ $link-underline : 3px solid #FFD233 ;
   }
 
   .nav > .nav-visible{
-    height: 25vh;
+    height: 100vh;;
   }
   .nav > .nav-links > a {
     display: block;

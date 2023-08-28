@@ -13,6 +13,7 @@ const Navbar = () => {
   }
 
   return (
+    <div className="navbar">    
     <div className="nav">
       <div className="nav-header">
         <div className="nav-title">
@@ -25,6 +26,7 @@ const Navbar = () => {
           <Link to="/explore">Explore</Link>
           <Link to="/summary">Summary</Link>
       </div>
+    </div>
     </div>
   );
 };

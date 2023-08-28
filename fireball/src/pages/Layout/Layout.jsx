@@ -5,11 +5,8 @@ import Navbar from "../../Components/Navbar";
 const Layout = () => {
   return (
     <div className="layout" >
-      {/* Navbar goes here */}
-      <div className="navbar">
         <Navbar />
-      </div>
-      <Outlet />
+        <Outlet />
       {/* Footer goes here */}
       <div className="footer">Footer</div>
     </div>
