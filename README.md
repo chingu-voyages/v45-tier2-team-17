@@ -1,28 +1,71 @@
-# voyage-tasks
+## 🪐 Meteoros
+> A responsive app that allows the user to search for ....
+> Live demo [_here_](#).
 
-Your project's `readme` is as important to success as your code. For 
-this reason you should put as much care into its creation and maintenance
-as you would any other component of the application.
+## Table of Contents
+* [General Info](#general-information)
+* [Technologies Used](#technologies-used)
+* [Features](#features)
+* [Screenshots](#screenshots)
+* [Project Status](#project-status)
+* [Room for Improvement](#room-for-improvement)
+* [Contact](#contact)
 
-If you are unsure of what should go into the `readme` let this article,
-written by an experienced Chingu, be your starting point - 
-[Keys to a well written README](https://tinyurl.com/yk3wubft).
 
-And before we go there's "one more thing"! Once you decide what to include
-in your `readme` feel free to replace the text we've provided here.
+## General Information
+<ul><li>The goal of this project was to...</li></ul>
 
-> Own it & Make it your Own!
 
-## Team Documents
+## Technologies Used
+<ul>
+  <li>HTML5</li>
+  <li>CSS3</li>
+  <li>NASA API</li>
+  <li>Responsive Web Development</li> </ul>
+  
+  
+  Communication Tool
+<ul>
+  <li>Axios</li></ul>
+  
+ ## Framework 
+<ul><li>SCSS</li>
+  <li>React.js</li>
+  <li>Vite</li></ul>
+  
+## Features
 
-You may find these helpful as you work together to organize your project.
+<ul>
+  <li>As a user I can...</li>
+  <li>As a user I can...</li>
+  <li>As a user I can...</li>
+</ul>
+ 
 
-- [Team Project Ideas](./docs/team_project_ideas.md)
-- [Team Decision Log](./docs/team_decision_log.md)
 
-Meeting Agenda templates (located in the `/docs` directory in this repo):
+## Screenshots
 
-- Meeting - Voyage Kickoff --> ./docs/meeting-voyage_kickoff.docx
-- Meeting - App Vision & Feature Planning --> ./docs/meeting-vision_and_feature_planning.docx
-- Meeting - Sprint Retrospective, Review, and Planning --> ./docs/meeting-sprint_retrospective_review_and_planning.docx
-- Meeting - Sprint Open Topic Session --> ./docs/meeting-sprint_open_topic_session.docx
+
+
+
+
+
+
+## Project Status
+<ul>
+<li>Project is: in progress</li></ul>
+
+
+## Room for Improvement
+<ul>
+  <li>Improve...</li></ul>
+
+
+
+## To do:
+<ul>
+  <li>Make...</li></ul>
+
+
+## Contact
+ This project was developed by Aditi Deshpande, [Paulette-Zaldivar-Flores](https://paulettethedev.com/) , Dhruv Jadvani, [Shivangi Singh](https://github.com/Shivangi020), Zaved Hussain Sikdar and Rakha Randhikatama - feel free to contact us!
