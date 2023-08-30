@@ -1,10 +1,17 @@
+// .card-container {
+//     // width: 1287px;
+//     // height: 574px;
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     column-gap: 20px;
+// }
+
 .card-container {
-    width: 1287px;
-    height: 574px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    column-gap: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
 }
 
 .main-container {
