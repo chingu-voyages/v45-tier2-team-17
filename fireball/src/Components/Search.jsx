@@ -9,7 +9,6 @@ const Search = () => {
     e.preventDefault();
     filterData();
   };
-  
   return (
     <section className="form-container">
       <form
@@ -76,14 +75,22 @@ const Search = () => {
             <label htmlFor="composition" className="form-label">
               Composition
             </label>
-            <input
+            <select
               type="text"
               id="composition"
               name="composition"
               className="form-select"
-              value={composition}
+              defaultValue="all"
               onChange={updateFilters}
-            />
+            >
+              {composition.map((item) => {
+                return (
+                  <option key={item} value={item}>
+                    {item}
+                  </option>
+                );
+              })}
+            </select>
           </div>
         </div>
         <button type="submit">Search</button>
