@@ -1,6 +1,6 @@
 import { useGlobalContext } from "../../context";
 
-import {LineChart,Line,XAxis,YAxis,CartesianGrid,Tooltip,Legend,} from "recharts";
+import {LineChart,Line,XAxis,YAxis,CartesianGrid,Tooltip,Legend,Label} from "recharts";
 
 
 const StrikeByYearChart = () => {
@@ -8,8 +8,7 @@ const StrikeByYearChart = () => {
   
   let strikeMap = {};
 
-//   Calculating Number of Strikes Per Year
-//  
+//   Calculating Number of Strikes Per Year 
   filteredData.forEach(element => {
     let year = element.year?.slice(0, 4)  ;
     if(strikeMap[year]){
@@ -28,19 +27,19 @@ const StrikeByYearChart = () => {
   console.log(strikeData)
 
   return (
-    <div>
+    <div className="lineChart-cn">
       <LineChart
         width={1000}
-        height={500}
+        height={495}
         data={strikeData}
         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="year" />
-        <YAxis dataKey="strikes"/>
-        <Tooltip />
-        <Legend />
-        <Line type="monotone" dataKey="strikes" stroke="#FFD233" />
+        <XAxis dataKey="year" label={{ value: '-- Year --',  position: 'insideBottom' , fontSize: 20 ,offset:"-20" }} />
+        <YAxis dataKey="strikes" label={{ value: 'No. Of Strikes', angle: -90, position: 'insideLeft' , fontSize: 20  }}/>
+        <Tooltip viewBox={{fill:'red'}} />
+        <Legend verticalAlign="top" iconType="plainline"/>
+        <Line type="monotone" dataKey="strikes" stroke="rgba(212, 213, 212)"  activeDot={{ r: 4 }}  />
       </LineChart>
     </div>
   );
