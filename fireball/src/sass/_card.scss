@@ -8,10 +8,11 @@
 // }
 
 .card-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    column-gap: 20px;
 }
 
 .main-container {
