@@ -1,18 +1,21 @@
 import React, { useEffect } from "react";
 import { useGlobalContext } from "../../context";
 import Search from "../../Components/Search";
+import Card from "../../Components/Card/Card";
+import ScrollBar from "../../Components/ScrollBar/ScrollBar";
+import "../../sass/_explore.scss";
 
 const Explore = () => {
-  const { data, fetchData } = useGlobalContext();
-  useEffect(() => {
-    fetchData();
-  }, []);
+  // const { data, fetchData } = useGlobalContext();
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
   return (
     <>
       <main className="explore-page">
-        <div>
+        {/* <div>
           <Search />
-        </div>
+        </div> */}
         <div className="main-container">
           <div className="card-container">
             <Card head="Name" />
