@@ -40,7 +40,7 @@ const StrikeByYearChart = () => {
         <YAxis dataKey="strikes"/>
         <Tooltip />
         <Legend />
-        <Line type="monotone" dataKey="strikes" stroke="#8884d8" />
+        <Line type="monotone" dataKey="strikes" stroke="#FFD233" />
       </LineChart>
     </div>
   );
