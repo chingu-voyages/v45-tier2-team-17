@@ -17,8 +17,12 @@ const reducer = (state, action) => {
   if (action.type === GET_DATA_SUCCESS) {
     const newData = action.payload;
     let newMaxMass = -1;
+    let newCompositionOptions = ["all"];
     newData.forEach((item) => {
       newMaxMass = Math.max(item.mass);
+      if (!newCompositionOptions.includes(item.recclass)) {
+        newCompositionOptions.push(item.recclass);
+      }
     });
 
     return {
@@ -31,6 +35,7 @@ const reducer = (state, action) => {
         ...state.filters,
         maxMass: newMaxMass,
         mass: newMaxMass,
+        composition: newCompositionOptions,
       },
     };
   }
