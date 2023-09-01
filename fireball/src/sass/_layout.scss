@@ -1,9 +1,9 @@
 
 .layout {
     display: flex;
+    flex-direction: column;
     min-width: 100%;
     min-height: 100vh;
-    justify-content: center;
     align-items: center;
     background-image: url("../assets/Background Image.png");
     background-size: cover;

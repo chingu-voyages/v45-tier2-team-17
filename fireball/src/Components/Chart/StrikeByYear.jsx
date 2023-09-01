@@ -1,6 +1,6 @@
 import { useGlobalContext } from "../../context";
 
-import {LineChart,Line,XAxis,YAxis,CartesianGrid,Tooltip,Legend,Label} from "recharts";
+import {LineChart,Line,XAxis,YAxis,CartesianGrid,Tooltip,Legend,ResponsiveContainer} from "recharts";
 
 
 const StrikeByYearChart = () => {
@@ -27,7 +27,8 @@ const StrikeByYearChart = () => {
   console.log(strikeData)
 
   return (
-    <div className="lineChart-cn">
+   
+     <div className="lineChart-cn">
       <LineChart
         width={1000}
         height={495}
@@ -39,9 +40,13 @@ const StrikeByYearChart = () => {
         <YAxis dataKey="strikes" label={{ value: 'No. Of Strikes', angle: -90, position: 'insideLeft' , fontSize: 20  }}/>
         <Tooltip viewBox={{fill:'red'}} />
         <Legend verticalAlign="top" iconType="plainline"/>
-        <Line type="monotone" dataKey="strikes" stroke="rgba(212, 213, 212)"  activeDot={{ r: 4 }}  />
+        <Line type="monotone" dataKey="strikes" stroke="rgb(212, 213, 212)"  activeDot={{ r: 4 }}  />
       </LineChart>
-    </div>
+
+     </div> 
+
+     
+   
   );
 };
 

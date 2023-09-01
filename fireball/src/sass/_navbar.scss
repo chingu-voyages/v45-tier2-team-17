@@ -4,7 +4,7 @@ $link-underline : 3px solid #FFD233 ;
 .navbar {
   display: flex;
   top: 0;
-  position: fixed;
+  position: relative;
   justify-content: space-between;
   padding: 20px 0px;
   width: 100%;
