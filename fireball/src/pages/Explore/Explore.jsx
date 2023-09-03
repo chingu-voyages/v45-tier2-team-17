@@ -2,14 +2,12 @@ import React, { useEffect } from "react";
 import { useGlobalContext } from "../../context";
 import "../../sass/_explore.scss";
 import Table from "../../Components/Table/Table";
-
+import Search from "../../Components/Search"
 const Explore = () => {
-  const { data, fetchData } = useGlobalContext();
+  const { data, fetchData, filteredData } = useGlobalContext();
   useEffect(() => {
     fetchData();
   }, []);
-  const filteredData = data.slice(0, 15);
-  console.log(filteredData);
 
   // const exampleData = {
   //   fall: "Fell",
@@ -65,7 +63,8 @@ const Explore = () => {
 
   return (
     <div className="explore-page">
-      <Table data={data} columns={columns} />
+      {/* <Search/> */}
+      <Table data={filteredData} columns={columns} />
     </div>
   );
 };

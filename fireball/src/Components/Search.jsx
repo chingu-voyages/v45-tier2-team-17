@@ -9,7 +9,12 @@ const Search = () => {
     e.preventDefault();
     filterData();
   };
+<<<<<<< Updated upstream
   
+=======
+  console.log({composition},"from search")
+
+>>>>>>> Stashed changes
   return (
     <section className="form-container">
       <form
@@ -71,7 +76,6 @@ const Search = () => {
           </div>
 
           {/* Composition input */}
-
           <div className="form-row">
             <label htmlFor="composition" className="form-label">
               Composition
