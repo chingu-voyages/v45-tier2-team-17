@@ -7,7 +7,7 @@ import {
   useReactTable,
 } from "@tanstack/react-table";
 import { useState } from "react";
-import "../../sass/_table.scss"
+
 const Table = ({ data, columns }) => {
 
     const [sorting, setSorting] = useState([])
@@ -37,7 +37,7 @@ const Table = ({ data, columns }) => {
             placeholder="this is example filter"
           />
           <table className='table'>
-            <thead>
+            <thead className="table-head">
               {table.getHeaderGroups().map(headerGroup => (
                 <tr key={headerGroup.id}>
                   {headerGroup.headers.map(header => (
@@ -64,7 +64,7 @@ const Table = ({ data, columns }) => {
               ))}
             </thead>
     
-            <tbody>
+            <tbody className="table-body">
               {table.getRowModel().rows.map(row => (
                 <tr key={row.id}>
                   {row.getVisibleCells().map(cell => (

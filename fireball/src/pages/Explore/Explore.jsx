@@ -26,12 +26,12 @@ const Explore = () => {
   /** @type import('@tanstack/react-table').ColumnDef<any> */
   const columns = [
     {
-      header: "ID",
-      accessorKey: "id",
-    },
-    {
       header: "Name",
       accessorKey: "name",
+    },
+    {
+      header:"Meteor id",
+      accessorKey:"id"
     },
     {
       header: "Fall",
@@ -50,6 +50,10 @@ const Explore = () => {
       accessorKey: "recclass",
     },
     {
+      header: "Year",
+      accessorKey: "year",
+    },
+    {
       header: "Reclong",
       accessorKey: "reclong",
     },
@@ -57,15 +61,11 @@ const Explore = () => {
       header: "Reclat",
       accessorKey: "reclat",
     },
-    {
-      header: "Year",
-      accessorKey: "year",
-    },
   ];
 
   return (
     <div className="explore-page">
-      <Table data={filteredData} columns={columns} />
+      <Table data={data} columns={columns} />
     </div>
   );
 };
