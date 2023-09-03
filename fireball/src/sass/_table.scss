@@ -1,0 +1,102 @@
+.table-container {
+    width: 280px;
+    display: flex;
+    overflow-x: scroll;
+    flex-direction: column;
+    row-gap: 20px;
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+
+        .table-head{
+        }
+
+        .table-body{}
+
+        tr,
+        td {
+            border: 1px solid white;
+            text-align: center;
+        }
+
+        th {
+            border: 1px solid white;
+        }
+    }
+
+    .pagination {
+        width: 100%;
+        display: flex;
+        column-gap: 1rem;
+    }
+}
+
+
+
+/* Media queries css to make table responsive
+
+
+*/
+@media (min-width:481px) {
+    .table-container {
+        width: 450px;
+    }
+}
+
+@media (min-width:600px) {
+    .table-container {
+        width: 580px;
+        overflow: initial;
+    }
+}
+
+@media (min-width:801px) {
+    .table-container {
+        width: 780px;
+    }
+}
+
+@media (min-width:1025px) {
+    .table-container {
+        width: 900px;
+    }
+}
+
+@media (min-width:1281px) {
+    .table-container {
+        width: 1020px;
+    }
+}
+// below are css to adjust each table cell width
+tbody>tr>td:nth-child(1) {
+    width: 20%;
+}
+
+tbody>tr>td:nth-child(2) {
+    width: 15%;
+}
+
+tbody>tr>td:nth-child(3) {
+    width: 10%;
+}
+
+tbody>tr>td:nth-child(4) {
+    width: 10%;
+}
+
+tbody>tr>td:nth-child(5) {
+    width: 10%;
+}
+
+tbody>tr>td:nth-child(6) {
+    width: 10%;
+}
+
+tbody>tr>td:nth-child(7) {
+    width: 10%;
+}
+
+tbody>tr>td:nth-child(8) {
+    width: 20%;
+}
