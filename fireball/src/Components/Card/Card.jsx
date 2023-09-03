@@ -1,10 +1,10 @@
 import React from "react";
 import "../../sass/_card.scss";
-const Card = ({ head }) => {
+const Card = ({ name, data }) => {
   return (
     <div className="card">
-      <div className="card-heading">{head}</div>
-      <div className="card-body">body</div>
+      <div className="card-heading">{name}</div>
+      <div className="card-body">{data}</div>
     </div>
   );
 };
