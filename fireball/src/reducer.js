@@ -64,11 +64,7 @@ const reducer = (state, action) => {
 
     if (composition) {
       tempData = tempData.filter((item) =>
-<<<<<<< Updated upstream
-        item.name.toLowerCase().includes(composition.toLowerCase())
-=======
         composition.map(c => c.toLowerCase()).includes(item.recclass.toLowerCase())
->>>>>>> Stashed changes
       );
     }
     tempData = tempData.filter((item) => item.mass <= mass);

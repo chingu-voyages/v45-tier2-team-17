@@ -9,12 +9,7 @@ const Search = () => {
     e.preventDefault();
     filterData();
   };
-<<<<<<< Updated upstream
   
-=======
-  console.log({composition},"from search")
-
->>>>>>> Stashed changes
   return (
     <section className="form-container">
       <form
