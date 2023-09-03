@@ -7,13 +7,13 @@ import {HiMenu} from 'react-icons/hi'
 const Navbar = () => {
 
   const [showLink ,setShowLink] = useState(false);
-  
+
   const menuButtonHandler = ()=>{
        setShowLink(!showLink);
   }
 
   return (
-    <div className="navbar">    
+    <div className="navbar">
     <div className="nav">
       <div className="nav-header">
         <div className="nav-title">
