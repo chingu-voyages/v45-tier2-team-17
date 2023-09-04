@@ -3,21 +3,13 @@ import { useGlobalContext } from "../../context";
 import { PieChart, Pie,Sector} from "recharts";
 
 
-const renderActiveShape = (props) => {
+const renderActiveShape = ({cx,cy,midAngle,innerRadius,outerRadius,startAngle,endAngle,fill,payload,percent,value}) => {
+  
+  // converting degrees to radians.
   const RADIAN = Math.PI / 180;
-  const {
-    cx,
-    cy,
-    midAngle,
-    innerRadius,
-    outerRadius,
-    startAngle,
-    endAngle,
-    fill,
-    payload,
-    percent,
-    value
-  } = props;
+
+  // These Values are used to determine the position of various elements within the active shape.
+  // It calculates coordinates (sx, sy, mx, my, ex, ey) for drawing a line and text within the active shape (Arc)
   const sin = Math.sin(-RADIAN * midAngle);
   const cos = Math.cos(-RADIAN * midAngle);
   const sx = cx + (outerRadius + 10) * cos;
@@ -28,9 +20,10 @@ const renderActiveShape = (props) => {
   const ey = my;
   const textAnchor = cos >= 0 ? "start" : "end";
 
+  // Returning ARC for active shape with text no. of strikes and composition percent
   return (
     <g>
-      <text x={cx} y={cy} dy={8} textAnchor="middle" fill={"#E8E251"}>
+      <text x={cx} y={cy} dy={8} textAnchor="middle" fill={"#E8E251"} fontSize={"20px"}>
         {payload.recclass}
       </text>
       <Sector
@@ -94,14 +87,11 @@ const StrikeByComposition = () => {
 
   });
   
-  //   Mapping the composition object into Array data structure
+  // Mapping the composition object into Array data structure
   const compositionData = Object.keys(compositionMap).map(recclass => ({
     recclass,
     strikes: compositionMap[recclass] 
   }));
-
-  console.log(compositionData)
-
  
   const [activeIndex, setActiveIndex] = useState(0);
   const onPieEnter = useCallback(
