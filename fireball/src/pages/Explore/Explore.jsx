@@ -1,7 +1,9 @@
 import React, { useEffect } from "react";
 import { useGlobalContext } from "../../context";
 import "../../sass/_explore.scss";
+import Search from "../../Components/Search";
 import Table from "../../Components/Table/Table";
+import StrikeByYearChart from "../../Components/Chart/StrikeByYear";
 
 const Explore = () => {
   const { data, fetchData } = useGlobalContext();
@@ -30,8 +32,8 @@ const Explore = () => {
       accessorKey: "name",
     },
     {
-      header:"Meteor id",
-      accessorKey:"id"
+      header: "Meteor id",
+      accessorKey: "id",
     },
     {
       header: "Fall",
@@ -64,9 +66,10 @@ const Explore = () => {
   ];
 
   return (
-    <div className="explore-page">
+    <main style={{ display: "flex", flexGrow: "1" }} className="explore-page">
+      <Search />
       <Table data={data} columns={columns} />
-    </div>
+    </main>
   );
 };
 
