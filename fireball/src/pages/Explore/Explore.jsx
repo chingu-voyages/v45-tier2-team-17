@@ -10,8 +10,8 @@ const Explore = () => {
   useEffect(() => {
     fetchData();
   }, []);
-  const filteredData = data.slice(0, 15);
-  console.log(filteredData);
+  // const filteredData = data.slice(0, 15);
+  // console.log(filteredData);
 
   // const exampleData = {
   //   fall: "Fell",
@@ -32,6 +32,8 @@ const Explore = () => {
       accessorKey: "name",
     },
     {
+      header: "Meteor id",
+      accessorKey: "id",
       header: "Meteor id",
       accessorKey: "id",
     },
