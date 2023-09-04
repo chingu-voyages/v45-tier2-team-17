@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { useGlobalContext } from "../../context";
 import "../../sass/_explore.scss";
 import Search from "../../Components/Search";
-import Table from "../../Components/Table/Table";
 import StrikeByYearChart from "../../Components/Chart/StrikeByYear";
 
 const Explore = () => {
