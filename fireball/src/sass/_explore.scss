@@ -1,9 +1,9 @@
 .explore-page {
-    display: flex;
-    height: 100vh;
-    color: white;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  flex-grow: 1;
+  gap: 5rem;
+  height: 100vh;
+  color: white;
+  width: 100%;
+  align-items: center;
 }
-

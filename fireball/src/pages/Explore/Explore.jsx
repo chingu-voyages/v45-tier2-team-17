@@ -66,7 +66,7 @@ const Explore = () => {
   ];
 
   return (
-    <main style={{ display: "flex", flexGrow: "1" }} className="explore-page">
+    <main className="explore-page">
       <Search />
       <Table data={data} columns={columns} />
     </main>
