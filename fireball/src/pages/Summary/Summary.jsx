@@ -4,10 +4,9 @@ import StrikeByComposition from "../../Components/Chart/StrikeByComposition";
 
 
 const Summary = () => {
-  return <div>Summary
+  return <div className="summary-cn">
     <StrikeByYearChart />
     <StrikeByComposition/>
-    
   </div>;
 };
 

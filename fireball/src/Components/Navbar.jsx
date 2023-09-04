@@ -20,7 +20,7 @@ const Navbar = () => {
         <img src={meteorosLogo} alt="MeteorosLogo" />
         </div>
       </div>
-      <div className="nav-btn" onClick={menuButtonHandler}> <HiMenu/></div>
+      <div className="nav-btn" onClick={menuButtonHandler}><HiMenu/></div>
       <div className={showLink ? `nav-links nav-visible` : 'nav-links'}>
           <Link to="/" >Home</Link>
           <Link to="/explore">Explore</Link>

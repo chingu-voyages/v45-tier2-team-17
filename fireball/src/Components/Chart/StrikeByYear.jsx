@@ -29,6 +29,7 @@ const StrikeByYearChart = () => {
   return (
    
      <div className="lineChart-cn">
+      <h1>Total Strikes: {filteredData.length}</h1>
       <LineChart
         width={1000}
         height={495}
@@ -36,16 +37,14 @@ const StrikeByYearChart = () => {
         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="year" label={{ value: '-- Year --',  position: 'insideBottom' , fontSize: 20 ,offset:"-20" }} />
+        <XAxis dataKey="year" />
         <YAxis dataKey="strikes" label={{ value: 'No. Of Strikes', angle: -90, position: 'insideLeft' , fontSize: 20  }}/>
-        <Tooltip viewBox={{fill:'red'}} />
-        <Legend verticalAlign="top" iconType="plainline"/>
+        <Tooltip />
+        <Legend verticalAlign="bottom" iconType="plainline"/>
         <Line type="monotone" dataKey="strikes" stroke="rgb(212, 213, 212)"  activeDot={{ r: 4 }}  />
       </LineChart>
 
      </div> 
-
-     
    
   );
 };

@@ -8,7 +8,6 @@ body {
     margin: 0;
     display: flex;
     min-height: 100vh;
-    min-width: 100%;
     align-items: center;
     justify-content: center;
     font-family: $font;
@@ -16,6 +15,6 @@ body {
   }
   
   #root{
-    min-width: 100vw;
+    min-width: 100%;
   }
   

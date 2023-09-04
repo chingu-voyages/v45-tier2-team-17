@@ -9,10 +9,11 @@ const StrikeByComposition = () => {
   let compositionMap = {};
 
   // Colors for Pie chart
-  const colors = ['#efc943' ,'#d4d5d4' ];
+  const colors = [ '#d4d5d4' ,'#efc943' ,'#888888'];
 
   const TotalCount = filteredData.length;
-  //   Calculating Number of Strikes Per Year 
+
+  // Calculating Number of Strikes Per Year 
   filteredData.forEach(element => {
     let composition = element.recclass ;
     if(compositionMap[composition]){
@@ -27,28 +28,37 @@ const StrikeByComposition = () => {
   //   Mapping the composition object into Array data structure
   const compositionData = Object.keys(compositionMap).map(recclass => ({
     recclass,
-    strikes: Number (((compositionMap[recclass] /TotalCount ) * 100 ).toFixed(2) )
+    strikes: Number (((compositionMap[recclass] /1000 ) * 100 ).toFixed(2) )
   }));
 
   console.log(compositionData)
 
+  const customDataKey = (data) =>{
+    console.log(data)
+    const {strikes} = data
+      return strikes + '%' 
+  }
+  
+  
   return (
-    <PieChart width={1000} height={400}>
+    <PieChart width={1000} height={500}>
     <Pie
       nameKey="recclass"
-      dataKey="strikes"
+      dataKey={customDataKey}
       data={compositionData}
       cx={500}
       cy={200}
       innerRadius={100}
-      outerRadius={180}
-      fill="#d4d5d4"
+      outerRadius={200}
+      fill="#888888"
+      paddingAngle={0}
     >
         {/* {
       compositionData.map((entry, index) => (
-        <Cell key={`cell-${index}`} fill={colors[index  > 1? index%colors.length:index ]}/>
+        <Cell key={`cell-${index}`} fill={colors[index  > 2? index%colors.length:index ]}/>
       ))
     } */}
+    
     </Pie>
     <Tooltip />
   </PieChart>
