@@ -1,6 +1,6 @@
 import React ,{useState,useCallback} from 'react'
 import { useGlobalContext } from "../../context";
-import { PieChart, Pie} from "recharts";
+import { PieChart, Pie, ResponsiveContainer} from "recharts";
 import renderActiveShape from './RenderActiveShape';
 
 
@@ -41,6 +41,7 @@ const StrikeByComposition = () => {
   );
 
   return (
+    
     <PieChart width={1000} height={500}>
       <Pie
         activeIndex={activeIndex}
@@ -56,6 +57,8 @@ const StrikeByComposition = () => {
         onMouseEnter={onPieEnter}
       />
     </PieChart>
+   
+
   );
 
 }

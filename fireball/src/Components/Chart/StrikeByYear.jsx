@@ -27,12 +27,8 @@ const StrikeByYearChart = () => {
   console.log(strikeData)
 
   return (
-   
-     <div className="lineChart-cn">
-      <h1>Total Strikes: {filteredData.length}</h1>
-      <LineChart
-        width={1000}
-        height={495}
+    <ResponsiveContainer  width="100%"  height={495}>
+      <LineChart     
         data={strikeData}
         margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
       >
@@ -43,8 +39,7 @@ const StrikeByYearChart = () => {
         <Legend verticalAlign="bottom" iconType="plainline"/>
         <Line type="monotone" dataKey="strikes" stroke="rgb(212, 213, 212)"  activeDot={{ r: 4 }}  />
       </LineChart>
-
-     </div> 
+     </ResponsiveContainer>
    
   );
 };

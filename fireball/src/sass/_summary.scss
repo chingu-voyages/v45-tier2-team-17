@@ -1,13 +1,15 @@
 .summary-cn{
-    // width: 1200px;
+    width: 100%;
+    min-height: 100vh;
     margin: 0 auto;
+    padding-top: 50px;  
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: center;
-    padding-top: 50px;
-
+    align-items: center;
 
     h1{
         color: white;
+        font-weight: 400;
     }
 }
