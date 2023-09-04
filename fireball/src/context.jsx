@@ -19,7 +19,8 @@ const initialFilterState = {
   minMass: 0,
   maxMass: 0,
   mass: 0,
-  composition: ["all"],
+  composition: "all",
+  compositionOptions: ["all"],
 };
 
 const initialState = {

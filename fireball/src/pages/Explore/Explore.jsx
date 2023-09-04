@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useGlobalContext } from "../../context";
 import Search from "../../Components/Search";
+import StrikeByYearChart from "../../Components/Chart/StrikeByYear";
 
 const Explore = () => {
   const { data, fetchData } = useGlobalContext();
@@ -8,9 +9,9 @@ const Explore = () => {
     fetchData();
   }, []);
   return (
-    <div>
+    <main style={{ display: "flex", flexGrow: "1" }}>
       <Search />
-    </div>
+    </main>
   );
 };
 

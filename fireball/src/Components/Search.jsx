@@ -3,7 +3,15 @@ import { useGlobalContext } from "../context";
 const Search = () => {
   const { filters, updateFilters, clearFilters, filterData } =
     useGlobalContext();
-  const { name, year, minMass, maxMass, mass, composition } = filters;
+  const {
+    name,
+    year,
+    minMass,
+    maxMass,
+    mass,
+    composition,
+    compositionOptions,
+  } = filters;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -11,12 +19,8 @@ const Search = () => {
   };
   return (
     <section className="form-container">
-      <form
-        className="search-form"
-        style={{ display: "flex" }}
-        onSubmit={handleSubmit}
-      >
-        <div style={{ display: "flex" }}>
+      <form className="search-form" onSubmit={handleSubmit}>
+        <div className="form-rows">
           {/* Search input */}
 
           <div className="form-row">
@@ -80,10 +84,10 @@ const Search = () => {
               id="composition"
               name="composition"
               className="form-select"
-              defaultValue="all"
+              defaultValue={composition}
               onChange={updateFilters}
             >
-              {composition.map((item) => {
+              {compositionOptions.map((item) => {
                 return (
                   <option key={item} value={item}>
                     {item}
@@ -93,10 +97,14 @@ const Search = () => {
             </select>
           </div>
         </div>
-        <button type="submit">Search</button>
-        <button type="button" onClick={clearFilters}>
-          Clear
-        </button>
+        <div className="form-btns">
+          <button type="submit" className="btn-submit">
+            Search
+          </button>
+          <button type="button" className="btn-reset" onClick={clearFilters}>
+            Clear
+          </button>
+        </div>
       </form>
     </section>
   );
