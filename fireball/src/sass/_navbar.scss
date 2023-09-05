@@ -6,11 +6,11 @@ $link-underline : 3px solid #FFD233 ;
   top: 0;
   position: relative;
   justify-content: space-between;
-  padding: 20px 0px;
   width: 100%;
-  background-color: inherit;
   height: 50px;
+  background-color: inherit;
   z-index: 2;
+  padding: 20px 0px;
 }
 
 .nav {
@@ -21,7 +21,6 @@ $link-underline : 3px solid #FFD233 ;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-
 }
 
 .nav > .nav-header {
