@@ -4,25 +4,36 @@
     overflow-x: scroll;
     flex-direction: column;
     row-gap: 20px;
+    border-radius: 20px;
+    box-sizing: content-box;
 
     .table {
         width: 100%;
         border-collapse: collapse;
 
-        .table-head{
-        }
 
-        .table-body{}
+        // .table-head{
+        // }
+
+        // .table-body{}
 
         tr,
         td {
-            border: 1px solid white;
+            border: 1px solid #ffffff;
             text-align: center;
         }
 
         th {
-            border: 1px solid white;
+            border: 1px solid #ffffff;
+            background-color:rgba(116, 112, 112, 0.5);
         }
+
+    }
+
+
+    .table-input{
+      padding: 10px;
+      border-radius: 30px;
     }
 
     .pagination {
@@ -91,7 +102,7 @@
         width: 1020px;
     }
 }
-// below are css to adjust each table cell width
+/* below are css to adjust each table cell width */
 tbody>tr>td:nth-child(1) {
     width: 20%;
 }
