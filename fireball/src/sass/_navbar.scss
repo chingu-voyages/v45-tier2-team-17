@@ -1,31 +1,24 @@
-$text-color : #FFFFFF;
-$link-underline : 3px solid #FFD233 ;
+$text-color: #ffffff;
+$link-underline: 3px solid #ffd233;
 
 .navbar {
   display: flex;
   top: 0;
   position: relative;
   justify-content: space-between;
-  padding: 20px 0px;
   width: 100%;
-  background-color: inherit;
   height: 50px;
+  background-color: inherit;
   z-index: 2;
+  padding: 20px 0px;
 }
 
 .nav {
   height: 50px;
   width: 100%;
   background-color: inherit;
-  position: relative;
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
-
-}
-
-.nav > .nav-header {
-  display: inline;
 }
 
 .nav > .nav-header > .nav-title {
@@ -33,8 +26,8 @@ $link-underline : 3px solid #FFD233 ;
   height: 65px;
   width: 65px;
   padding-left: 10px;
-  
-  img{
+
+  img {
     width: 100%;
     height: 100%;
   }
@@ -62,24 +55,17 @@ $link-underline : 3px solid #FFD233 ;
   border-bottom: $link-underline;
 }
 
-
-@media (max-width:400px) {
-
-  .nav{
-    flex-direction: column;
-    justify-content: center;
-  }
+@media (max-width: 400px) {
   .nav > .nav-btn {
     cursor: pointer;
     display: inline-block;
-    position: absolute;
     right: 0px;
     top: 0px;
     color: $text-color;
     font-size: 2em;
     margin-right: 20px;
   }
- 
+
   .nav > .nav-links > a:hover {
     background-color: rgba(0, 0, 0, 0.3);
     border-bottom: none;
@@ -87,24 +73,23 @@ $link-underline : 3px solid #FFD233 ;
 
   .nav > .nav-links {
     position: absolute;
-    display: block;
+    display: none;
     width: 100%;
     background-color: #333;
     height: 0px;
     transition: all 0.3s ease-in;
     overflow: hidden;
     left: 0px;
-    top: 60px;
+    top: 100px;
     text-align: center;
   }
 
-  .nav > .nav-visible{
-    height: 100vh;;
+  .nav > .nav-visible {
+    display: block;
+    height: 100vh;
   }
   .nav > .nav-links > a {
     display: block;
     width: 100%;
   }
-
-
 }

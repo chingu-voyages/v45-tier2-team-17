@@ -17,8 +17,12 @@ const reducer = (state, action) => {
   if (action.type === GET_DATA_SUCCESS) {
     const newData = action.payload;
     let newMaxMass = -1;
+    let newCompositionOptions = ["all"];
     newData.forEach((item) => {
       newMaxMass = Math.max(item.mass);
+      if (!newCompositionOptions.includes(item.recclass)) {
+        newCompositionOptions.push(item.recclass);
+      }
     });
 
     return {
@@ -31,6 +35,7 @@ const reducer = (state, action) => {
         ...state.filters,
         maxMass: newMaxMass,
         mass: newMaxMass,
+        compositionOptions: newCompositionOptions,
       },
     };
   }
@@ -53,7 +58,7 @@ const reducer = (state, action) => {
   }
   if (action.type === FILTER_DATA) {
     const { data, filters } = state;
-    const { name, year, mass, composition } = filters;
+    const { name, year, mass, maxMass, composition } = filters;
     let tempData = [...data];
     if (name) {
       tempData = tempData.filter((item) =>
@@ -61,15 +66,19 @@ const reducer = (state, action) => {
       );
     }
 
-    if (composition) {
-      tempData = tempData.filter((item) =>
-        item.name.toLowerCase().includes(composition.toLowerCase())
+    if (composition && composition !== "all") {
+      tempData = tempData.filter(
+        (item) => item.recclass.toLowerCase() === composition.toLowerCase()
       );
     }
-    tempData = tempData.filter((item) => item.mass <= mass);
-    tempData = tempData.filter(
-      (item) => Number(item.year?.slice(0, 4)) <= year
-    );
+    if (mass !== maxMass) {
+      tempData = tempData.filter((item) => item.mass <= mass);
+    }
+    if (year < 2023) {
+      tempData = tempData.filter(
+        (item) => Number(item.year?.slice(0, 4)) <= year
+      );
+    }
     console.log(tempData);
     return { ...state, filteredData: tempData };
   }

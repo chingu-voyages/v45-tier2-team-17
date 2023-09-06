@@ -1,0 +1,27 @@
+.scrollbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    column-gap: 38px;
+
+    &>div {
+        height: 23px;
+        border-radius: 6px;
+        border: 1px solid #D4D5D4;
+        background-color: #272A29;
+    }
+
+    .left-scrollbar {
+        width: 10%;
+    }
+
+    .right-scrollbar {
+        width: 10%;
+    }
+
+    .mid-scrollbar {
+        width: 100%;
+        text-align: center;
+    }
+}

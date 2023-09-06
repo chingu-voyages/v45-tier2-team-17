@@ -8,7 +8,6 @@ import {
   GET_DATA_SUCCESS,
   UPDATE_FILTERS,
 } from "./actions";
-
 import reducer from "./reducer";
 
 const url = "https://data.nasa.gov/resource/gh4g-9sfh.json";
@@ -20,7 +19,8 @@ const initialFilterState = {
   minMass: 0,
   maxMass: 0,
   mass: 0,
-  composition: "",
+  composition: "all",
+  compositionOptions: ["all"],
 };
 
 const initialState = {
