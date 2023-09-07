@@ -34,8 +34,6 @@ const Explore = () => {
     {
       header: "Meteor id",
       accessorKey: "id",
-      header: "Meteor id",
-      accessorKey: "id",
     },
     {
       header: "Fall",
