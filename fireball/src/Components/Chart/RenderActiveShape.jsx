@@ -2,7 +2,7 @@ import React from "react";
 import {Sector} from "recharts";
 
 
-// Function for rendering a customized tooltip and active shape for strike by composition piechart
+// Function for rendering a customized tooltip and active shape (Arc) for strike by composition piechart
 const renderActiveShape = ({cx,cy,midAngle,innerRadius,outerRadius,startAngle,endAngle,fill,payload,percent,value}) => {
   
     // converting degrees to radians.

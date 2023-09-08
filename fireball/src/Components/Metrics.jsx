@@ -18,7 +18,7 @@ useEffect(()=>{
             totalMass += mass
         } 
     }
-    let averageMass =  (totalMass / totalStrikes).toFixed(2)
+    let averageMass =  totalStrikes == 0 ? 0:(totalMass / totalStrikes).toFixed(2);
     setAvgMass(averageMass)
 },[filteredData])
 

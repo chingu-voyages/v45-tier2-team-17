@@ -41,6 +41,7 @@ const StrikeByComposition = () => {
   );
 
   return (
+  
     <PieChart width={1000} height={500}>
       <Pie
         activeIndex={activeIndex}
@@ -56,8 +57,6 @@ const StrikeByComposition = () => {
         onMouseEnter={onPieEnter}
       />
     </PieChart>
-   
-
   );
 
 }
