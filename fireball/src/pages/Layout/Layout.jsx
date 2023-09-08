@@ -8,7 +8,6 @@ const Layout = () => {
     <div className="layout">
       <Navbar />
       <Outlet />
-      {/* Footer goes here */}
       <Footer />
     </div>
   );

@@ -1,9 +1,40 @@
 .footer {
     display: flex;
-    width: 100%;
-    margin-top: 20px;
-    bottom: 0;
+    flex-direction: column;
     justify-content: center;
-    padding: 20px 0px;
+    align-items: center;
+    row-gap: 0.3em;
+    
+    position: absolute;
+    bottom: 0;
+
+    font-size: 0.8rem;
     color: white;
+    letter-spacing: 0.9px;
+    opacity: 80%;
+
+    padding: 20px 0px;
+
+  }
+
+.footer{
+    p {
+        margin: 0;
+        padding: 0;
+    }
+
+    .api-link,
+    .github-link{
+        color: inherit;
+        font-weight: 800;
+        letter-spacing: 0.8px;
+        text-decoration: none;
+    }
+
+    .api-link:hover,
+    .api-link:focus,
+    .github-link:hover,
+    .github-link:hover {
+        color: #ffdab9;
+    }
 }
