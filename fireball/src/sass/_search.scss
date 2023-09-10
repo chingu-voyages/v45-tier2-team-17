@@ -2,10 +2,12 @@
   display: flex;
   align-self: stretch;
   justify-content: center;
-  width: 250px;
   padding: 1.5rem 2rem;
+  position: relative;
+  @media (min-width:480px) {
+    width: 400px;
+  }
   background: rgba(46, 44, 44, 0.69);
-  border-radius: 0px 20px 20px 0px;
 
   form {
     display: flex;
@@ -72,5 +74,13 @@
         background-color: white;
       }
     }
+  }
+
+  .close-button{
+    font-size: 1.5rem;
+    color: #ffffff;
+    position: absolute;
+    right: 30px;
+    cursor: pointer;
   }
 }

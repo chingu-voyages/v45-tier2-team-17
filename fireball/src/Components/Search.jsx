@@ -1,7 +1,7 @@
 import { useGlobalContext } from "../context";
 
 const Search = () => {
-  const { filters, updateFilters, clearFilters, filterData } =
+  const { filters, updateFilters, clearFilters, filterData, setFilterPopup } =
     useGlobalContext();
   const {
     name,
@@ -19,6 +19,7 @@ const Search = () => {
   };
   return (
     <section className="form-container">
+      <div onClick={()=>setFilterPopup(false)} className="close-button">X</div>
       <form className="search-form" onSubmit={handleSubmit}>
         <div className="form-rows">
           {/* Search input */}
@@ -74,7 +75,6 @@ const Search = () => {
           </div>
 
           {/* Composition input */}
-
           <div className="form-row">
             <label htmlFor="composition" className="form-label">
               Composition
