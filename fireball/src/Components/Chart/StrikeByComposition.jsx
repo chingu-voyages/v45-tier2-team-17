@@ -1,10 +1,11 @@
-import React ,{useState,useCallback} from 'react'
+import React ,{useState,useCallback, useEffect} from 'react'
 import { useGlobalContext } from "../../context";
 import { PieChart, Pie, ResponsiveContainer} from "recharts";
 import renderActiveShape from './RenderActiveShape';
 
 
 const StrikeByComposition = () => {
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   const { filteredData } = useGlobalContext();
   let compositionMap = {};
@@ -39,6 +40,21 @@ const StrikeByComposition = () => {
     },
     [setActiveIndex]
   );
+ 
+
+  // This useEffect listens the window size and updates the windowWidth state . 
+  // This is required so that the Pie chart props innerRadius and outerRadius can be change with windows size
+  useEffect(()=>{
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  },[])
 
   return (
     <ResponsiveContainer  width="100%"  height={495} > 
@@ -48,9 +64,9 @@ const StrikeByComposition = () => {
         activeShape={renderActiveShape}
         data={compositionData}
         cx='50%'
-        cy='50%'
-        innerRadius='40%'
-        outerRadius='70%'
+        cy='45%'
+        innerRadius={windowWidth>650 ?'40%' :'30%'}
+        outerRadius={windowWidth>650 ? '70%':'50%'}
         fill="#888888"
         dataKey="strikes"
         nameKey="recclass"

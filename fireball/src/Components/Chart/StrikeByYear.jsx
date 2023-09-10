@@ -27,7 +27,7 @@ const StrikeByYearChart = () => {
   console.log(strikeData)
 
   return (
-    <ResponsiveContainer  width="70%"  height={495} minWidth={400}> 
+    <ResponsiveContainer  width="70%"  height={495} minWidth={400} > 
       <LineChart     
         data={strikeData}
         margin={{ top: 5, right: 30, left: 15, bottom: 5 }}
