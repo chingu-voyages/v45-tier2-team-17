@@ -67,7 +67,7 @@ const StrikeByComposition = () => {
         activeShape={renderActiveShape}
         data={compositionData}
         cx='50%'
-        cy='45%'
+        cy={windowWidth>650 ? '45%':'35%'}
         innerRadius={windowWidth>650 ?'40%' :'30%'}
         outerRadius={windowWidth>650 ? '70%':'50%'}
         fill="#888888"
