@@ -3,21 +3,24 @@ import { useGlobalContext } from "../context";
 const Search = () => {
   const { filters, updateFilters, clearFilters, filterData } =
     useGlobalContext();
-  const { name, year, minMass, maxMass, mass, composition } = filters;
+  const {
+    name,
+    year,
+    minMass,
+    maxMass,
+    mass,
+    composition,
+    compositionOptions,
+  } = filters;
 
   const handleSubmit = (e) => {
     e.preventDefault();
     filterData();
   };
-  
   return (
     <section className="form-container">
-      <form
-        className="search-form"
-        style={{ display: "flex" }}
-        onSubmit={handleSubmit}
-      >
-        <div style={{ display: "flex" }}>
+      <form className="search-form" onSubmit={handleSubmit}>
+        <div className="form-rows">
           {/* Search input */}
 
           <div className="form-row">
@@ -75,20 +78,32 @@ const Search = () => {
             <label htmlFor="composition" className="form-label">
               Composition
             </label>
-            <input
+            <select
               type="text"
               id="composition"
               name="composition"
               className="form-select"
-              value={composition}
+              defaultValue={composition}
               onChange={updateFilters}
-            />
+            >
+              {compositionOptions.map((item) => {
+                return (
+                  <option key={item} value={item}>
+                    {item}
+                  </option>
+                );
+              })}
+            </select>
           </div>
         </div>
-        <button type="submit">Search</button>
-        <button type="button" onClick={clearFilters}>
-          Clear
-        </button>
+        <div className="form-btns">
+          <button type="submit" className="btn-submit">
+            Search
+          </button>
+          <button type="button" className="btn-reset" onClick={clearFilters}>
+            Clear
+          </button>
+        </div>
       </form>
     </section>
   );

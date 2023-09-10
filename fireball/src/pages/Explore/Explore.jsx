@@ -1,13 +1,26 @@
 import React, { useEffect } from "react";
 import { useGlobalContext } from "../../context";
 import "../../sass/_explore.scss";
+import Search from "../../Components/Search";
 import Table from "../../Components/Table/Table";
+<<<<<<< HEAD
 import Search from "../../Components/Search"
 const Explore = () => {
   const { data, fetchData, filteredData } = useGlobalContext();
   useEffect(() => {
     fetchData();
   }, []);
+=======
+import StrikeByYearChart from "../../Components/Chart/StrikeByYear";
+
+const Explore = () => {
+  const { data } = useGlobalContext();
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
+  // const filteredData = data.slice(0, 15);
+  // console.log(filteredData);
+>>>>>>> develop
 
   // const exampleData = {
   //   fall: "Fell",
@@ -28,8 +41,8 @@ const Explore = () => {
       accessorKey: "name",
     },
     {
-      header:"Meteor id",
-      accessorKey:"id"
+      header: "Meteor id",
+      accessorKey: "id",
     },
     {
       header: "Fall",
@@ -62,10 +75,10 @@ const Explore = () => {
   ];
 
   return (
-    <div className="explore-page">
-      {/* <Search/> */}
-      <Table data={filteredData} columns={columns} />
-    </div>
+    <main className="explore-page">
+      <Search />
+      <Table data={data} columns={columns} />
+    </main>
   );
 };
 
