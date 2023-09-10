@@ -27,6 +27,8 @@ const StrikeByYearChart = () => {
   console.log(strikeData)
 
   return (
+    <>
+    <h3 className="year-h3">No. of Strikes per year</h3>
     <ResponsiveContainer  width="70%"  height={495} minWidth={400} > 
       <LineChart     
         data={strikeData}
@@ -40,7 +42,7 @@ const StrikeByYearChart = () => {
         <Line type="monotone" dataKey="strikes" stroke="rgb(212, 213, 212)"  activeDot={{ r: 4 }}  />
       </LineChart>
      </ResponsiveContainer>
-   
+     </>
   );
 };
 

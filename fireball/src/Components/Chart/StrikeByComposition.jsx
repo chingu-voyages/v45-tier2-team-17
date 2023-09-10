@@ -57,7 +57,10 @@ const StrikeByComposition = () => {
   },[])
 
   return (
-    <ResponsiveContainer  width="100%"  height={495} > 
+
+    <>
+    <h3 className='composition-h3'>No. of Strikes By Composition</h3>
+    <ResponsiveContainer  width="100%"  height={495} className='piechart'> 
     <PieChart  >
       <Pie
         activeIndex={activeIndex}
@@ -74,6 +77,7 @@ const StrikeByComposition = () => {
       />
     </PieChart>
     </ResponsiveContainer>
+    </>
   );
 
 }
