@@ -1,5 +1,5 @@
 ## 🪐 Meteoros
-> A responsive app that allows the user to search for ....
+> A responsive app that allows the user to search for meteor data using the NASA API.
 > Live demo [_here_](#).
 
 ## Table of Contents
