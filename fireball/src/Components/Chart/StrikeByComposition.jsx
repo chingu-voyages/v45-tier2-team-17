@@ -41,22 +41,23 @@ const StrikeByComposition = () => {
   );
 
   return (
-  
-    <PieChart width={1000} height={500}>
+    <ResponsiveContainer  width="100%"  height={495} > 
+    <PieChart  >
       <Pie
         activeIndex={activeIndex}
         activeShape={renderActiveShape}
         data={compositionData}
-        cx={500}
-        cy={200}
-        innerRadius={100}
-        outerRadius={160}
+        cx='50%'
+        cy='50%'
+        innerRadius='40%'
+        outerRadius='70%'
         fill="#888888"
         dataKey="strikes"
         nameKey="recclass"
         onMouseEnter={onPieEnter}
       />
     </PieChart>
+    </ResponsiveContainer>
   );
 
 }
