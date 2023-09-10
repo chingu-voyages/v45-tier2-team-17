@@ -4,18 +4,12 @@
     overflow-x: scroll;
     flex-direction: column;
     row-gap: 20px;
-    border-radius: 20px;
     box-sizing: content-box;
+
 
     .table {
         width: 100%;
         border-collapse: collapse;
-
-
-        // .table-head{
-        // }
-
-        // .table-body{}
 
         tr,
         td {
@@ -24,16 +18,20 @@
         }
 
         th {
+            text-align: center;
             border: 1px solid #ffffff;
-            background-color:rgba(116, 112, 112, 0.5);
+            background-color: rgba(116, 112, 112, 0.5);
+            >div{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
         }
-
     }
 
-
-    .table-input{
-      padding: 10px;
-      border-radius: 30px;
+    .table-input {
+        padding: 10px;
+        border-radius: 30px;
     }
 
     .pagination {
@@ -42,66 +40,53 @@
         column-gap: 1rem;
 
         button {
-          padding: 5px 10px;
-          background: #323334;
-          border: 1px solid #FFBD1E;
-          color: #ffffff;
-          text-transform: uppercase;
-          filter: drop-shadow(0px 2px 2px rgba(255, 255, 255, 0.50));
-          font-family: 'Rubik', sans-serif;
+            padding: 5px 10px;
+            background: #323334;
+            border: 1px solid #FFBD1E;
+            color: #ffffff;
+            text-transform: uppercase;
+            filter: drop-shadow(0px 2px 2px rgba(255, 255, 255, 0.50));
+            font-family: 'Rubik', sans-serif;
         }
 
-        button:hover{
-          background: #626465;
+        button:hover {
+            background: #626465;
         }
 
-        button:disabled{
-          background: hsl(200, 2%, 39%);
-          color: #808080;
-          border-color: rgb(249, 247, 247);
+        button:disabled {
+            background: hsl(200, 2%, 39%);
+            color: #808080;
+            border-color: rgb(249, 247, 247);
 
         }
     }
-}
 
-
-
-
-
-/* Media queries css to make table responsive
+    /* Media queries css to make table responsive
 
 
 */
-@media (min-width:481px) {
-    .table-container {
+    @media (min-width:481px) {
         width: 450px;
     }
-}
 
-@media (min-width:600px) {
-    .table-container {
+    @media (min-width:600px) {
         width: 580px;
         overflow: initial;
     }
-}
 
-@media (min-width:801px) {
-    .table-container {
+    @media (min-width:801px) {
         width: 780px;
     }
-}
 
-@media (min-width:1025px) {
-    .table-container {
+    @media (min-width:1025px) {
         width: 900px;
     }
-}
 
-@media (min-width:1281px) {
-    .table-container {
+    @media (min-width:1281px) {
         width: 1020px;
     }
 }
+
 /* below are css to adjust each table cell width */
 tbody>tr>td:nth-child(1) {
     width: 20%;

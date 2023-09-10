@@ -60,6 +60,7 @@ const reducer = (state, action) => {
     const { data, filters } = state;
     const { name, year, mass, maxMass, composition } = filters;
     let tempData = [...data];
+    console.log({composition})
     if (name) {
       tempData = tempData.filter((item) =>
         item.name.toLowerCase().includes(name.toLowerCase())

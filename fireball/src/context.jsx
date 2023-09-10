@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useContext, useEffect, useReducer } from "react";
+import React, { useContext, useEffect, useReducer, useState } from "react";
 import {
   CLEAR_FILTERS,
   FILTER_DATA,
@@ -31,9 +31,10 @@ const initialState = {
   filters: initialFilterState,
 };
 
+
 export const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
-
+  
   const fetchData = async () => {
     dispatch({ type: GET_DATA_BEGIN });
     try {
@@ -45,7 +46,7 @@ export const AppProvider = ({ children }) => {
       dispatch({ type: GET_DATA_ERROR });
     }
   };
-
+  
   const updateFilters = (e) => {
     let name = e.target.name;
     let value = e.target.value;
@@ -54,11 +55,11 @@ export const AppProvider = ({ children }) => {
     }
     dispatch({ type: UPDATE_FILTERS, payload: { name, value } });
   };
-
+  
   const clearFilters = () => {
     dispatch({ type: CLEAR_FILTERS });
   };
-
+  
   const filterData = () => {
     dispatch({ type: FILTER_DATA });
   };
@@ -66,10 +67,12 @@ export const AppProvider = ({ children }) => {
   useEffect(() => {
     fetchData();
   }, []);
+  
+  const [filterPopup, setFilterPopup] = useState(false)
 
   return (
     <AppContext.Provider
-      value={{ ...state, updateFilters, clearFilters, filterData, fetchData }}
+    value={{ ...state, updateFilters, clearFilters, filterData, fetchData, filterPopup, setFilterPopup }}
     >
       {children}
     </AppContext.Provider>
