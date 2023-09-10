@@ -1,9 +1,11 @@
 .explore-page {
   display: flex;
-  flex-grow: 1;
   gap: 1rem;
   min-height: 100vh;
   color: white;
   width: 100%;
   align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 120px 0 120px 0;
 }
