@@ -32,9 +32,10 @@ const Table = ({ data, columns }) => {
         <div className='table-container'>
           <input
             type='text'
+            className = "table-input"
             value={filtering}
             onChange={e => setFiltering(e.target.value)}
-            placeholder="this is example filter"
+            placeholder="Search for a meteor..."
           />
           <table className='table'>
             <thead className="table-head">
@@ -63,7 +64,7 @@ const Table = ({ data, columns }) => {
                 </tr>
               ))}
             </thead>
-    
+
             <tbody className="table-body">
               {table.getRowModel().rows.map(row => (
                 <tr key={row.id}>
