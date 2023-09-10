@@ -6,10 +6,10 @@ import Table from "../../Components/Table/Table";
 import StrikeByYearChart from "../../Components/Chart/StrikeByYear";
 
 const Explore = () => {
-  const { data, fetchData } = useGlobalContext();
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const { data } = useGlobalContext();
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
   // const filteredData = data.slice(0, 15);
   // console.log(filteredData);
 
