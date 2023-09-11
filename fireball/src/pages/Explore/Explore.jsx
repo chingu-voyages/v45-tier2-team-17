@@ -62,7 +62,7 @@ const Explore = () => {
           <></>
         )}
       </>
-      <button onClick={() => setFilterPopup(!filterPopup)}>filter</button>
+      <button class="apply-filter-btn" onClick={() => setFilterPopup(!filterPopup)}>apply filter</button>
       <Table data={filteredData} columns={columns} />
     </main>
   );
