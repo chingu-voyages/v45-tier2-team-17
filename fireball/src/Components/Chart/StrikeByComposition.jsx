@@ -4,9 +4,10 @@ import { PieChart, Pie, ResponsiveContainer } from "recharts";
 import renderActiveShape from "./RenderActiveShape";
 
 const StrikeByComposition = () => {
+  const { filteredData } = useGlobalContext();
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
-  const { filteredData } = useGlobalContext();
+ 
   let compositionMap = {};
 
   // Calculating Number of Strikes Per Year
@@ -39,7 +40,7 @@ const StrikeByComposition = () => {
   );
  
 
-  // This useEffect listens the window size and updates the windowWidth state . 
+  // This useEffect listens the window resize event and updates the windowWidth state . 
   // This is required so that the Pie chart props innerRadius and outerRadius can be change with windows size
   useEffect(()=>{
     const handleResize = () => {

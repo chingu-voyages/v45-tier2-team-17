@@ -12,11 +12,11 @@ const renderActiveShape = ({cx,cy,midAngle,innerRadius,outerRadius,startAngle,en
     // It calculates coordinates (sx, sy, mx, my, ex, ey) for drawing a line and text within the active shape (Arc)
     const sin = Math.sin(-RADIAN * midAngle);
     const cos = Math.cos(-RADIAN * midAngle);
-    const sx = cx + (outerRadius + 10) * cos;
-    const sy = cy + (outerRadius + 10) * sin;
-    const mx = cx + (outerRadius + 30) * cos;
-    const my = cy + (outerRadius + 30) * sin;
-    const ex = mx + (cos >= 0 ? 1 : -1) * 22;
+    const sx = cx + (outerRadius + 5) * cos;
+    const sy = cy + (outerRadius + 5) * sin;
+    const mx = cx + (outerRadius + 15) * cos;
+    const my = cy + (outerRadius + 15) * sin;
+    const ex = mx + (cos >= 0 ? 1 : -1) * 11;
     const ey = my;
     const textAnchor = cos >= 0 ? "start" : "end";
   
