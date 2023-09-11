@@ -16,7 +16,7 @@ const Summary = () => {
           <StrikeByComposition />
         </>
       ) : (
-        <h1>
+        <h1 className="no-summary-h1">
           Sorry, we couldn't find any meteorite strikes for your search query.
         </h1>
       )}
