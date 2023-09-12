@@ -27,20 +27,22 @@ const StrikeByYearChart = () => {
   console.log(strikeData)
 
   return (
-    <ResponsiveContainer  width="100%"  height={495}>
+    <>
+    <h3 className="year-h3">No. of Strikes per year</h3>
+    <ResponsiveContainer  width="70%"  height={495} > 
       <LineChart     
         data={strikeData}
-        margin={{ top: 5, right: 30, left: 20, bottom: 5 }}
+        margin={{ top: 5, right: 30, left: 15, bottom: 5 }}
       >
         <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="year" />
-        <YAxis dataKey="strikes" label={{ value: 'No. Of Strikes', angle: -90, position: 'insideLeft' , fontSize: 20  }}/>
+        <XAxis dataKey="year"/>
+        <YAxis dataKey="strikes" label={{ value: 'No. Of Strikes', angle: -90, position: 'insideLeft' , fontSize: 15}}/>
         <Tooltip />
         <Legend verticalAlign="bottom" iconType="plainline"/>
         <Line type="monotone" dataKey="strikes" stroke="rgb(212, 213, 212)"  activeDot={{ r: 4 }}  />
       </LineChart>
      </ResponsiveContainer>
-   
+     </>
   );
 };
 

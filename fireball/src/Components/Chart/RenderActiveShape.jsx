@@ -2,7 +2,7 @@ import React from "react";
 import {Sector} from "recharts";
 
 
-// Function for rendering a customized tooltip and active shape for strike by composition piechart
+// Function for rendering a customized tooltip and active shape (Arc) for strike by composition piechart
 const renderActiveShape = ({cx,cy,midAngle,innerRadius,outerRadius,startAngle,endAngle,fill,payload,percent,value}) => {
   
     // converting degrees to radians.
@@ -12,18 +12,18 @@ const renderActiveShape = ({cx,cy,midAngle,innerRadius,outerRadius,startAngle,en
     // It calculates coordinates (sx, sy, mx, my, ex, ey) for drawing a line and text within the active shape (Arc)
     const sin = Math.sin(-RADIAN * midAngle);
     const cos = Math.cos(-RADIAN * midAngle);
-    const sx = cx + (outerRadius + 10) * cos;
-    const sy = cy + (outerRadius + 10) * sin;
-    const mx = cx + (outerRadius + 30) * cos;
-    const my = cy + (outerRadius + 30) * sin;
-    const ex = mx + (cos >= 0 ? 1 : -1) * 22;
+    const sx = cx + (outerRadius + 5) * cos;
+    const sy = cy + (outerRadius + 5) * sin;
+    const mx = cx + (outerRadius + 15) * cos;
+    const my = cy + (outerRadius + 15) * sin;
+    const ex = mx + (cos >= 0 ? 1 : -1) * 11;
     const ey = my;
     const textAnchor = cos >= 0 ? "start" : "end";
   
     // Returning ARC for active shape with text no. of strikes and composition percent
     return (
       <g>
-        <text x={cx} y={cy} dy={8} textAnchor="middle" fill={"#E8E251"} fontSize={"20px"}>
+        <text x={cx} y={cy} dy={8} textAnchor="middle" fill={"#E8E251"} fontSize={"1em"}>
           {payload.recclass}
         </text>
         <Sector

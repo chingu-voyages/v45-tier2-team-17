@@ -80,11 +80,12 @@ $link-underline: 3px solid #ffd233;
     left: 0px;
     top: 100px;
     text-align: center;
+    z-index: 1000;
   }
 
   .nav > .nav-visible {
     display: block;
-    height: 100vh;
+    height: 200vh;
   }
   .nav > .nav-links > a {
     display: block;
