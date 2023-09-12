@@ -62,4 +62,4 @@
 
 
 ## Contact
- This project was developed by Aditi Deshpande, [Paulette-Zaldivar-Flores](https://paulettethedev.com/), Shivangi Singh, Zaved Hussain Sikdar and Rakha Randhikatama - feel free to contact us!
+ This project was developed by [Aditi Deshpande](https://github.com/Aditi002-holo/), [Paulette-Zaldivar-Flores](https://paulettethedev.com/), Shivangi Singh, Zaved Hussain Sikdar and Rakha Randhikatama - feel free to contact us!
