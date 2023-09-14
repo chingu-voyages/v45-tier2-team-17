@@ -40,6 +40,7 @@
         input {
           background: white;
           border-radius: 30px;
+          width: 100%;
         }
 
         select {
@@ -53,6 +54,15 @@
         }
         input[type="range"] {
           accent-color: #e8e251;
+        }
+
+        .input-container{
+          .range-container{
+            display: "flex"; 
+            justify-content: "space-between";
+            color: white;
+            font-size: 0.875rem;
+          }
         }
       }
     }
