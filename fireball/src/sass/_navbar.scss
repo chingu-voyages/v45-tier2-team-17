@@ -53,6 +53,10 @@ $link-underline: 3px solid #ffd233;
   border-bottom: $link-underline;
 }
 
+.nav > .svg a:hover {
+  color: purple;
+}
+
 @media (max-width: 400px) {
   .nav > .nav-btn {
     cursor: pointer;

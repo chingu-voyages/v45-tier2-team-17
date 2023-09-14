@@ -1,3 +1,4 @@
+// This mixin is created to create angle corner around meteorite strike and heading Meteroite Explorer
 @mixin box-corner($pad-left ,$pad-right,$border){
     padding-left: $pad-left;
     padding-right: $pad-right;
@@ -92,7 +93,7 @@
     justify-content: center;
     align-items: center;
     div{
-         margin-left: 5px;   
+        margin-left: 5px;   
         @include box-corner(10px,10px ,2px);
         padding-left: 15px;
         padding-right: 15px;
@@ -102,6 +103,7 @@
         }
     }
 }
+
 
 
 @media only screen and (max-width: 900px) {
@@ -116,7 +118,6 @@
 /* Extra small devices (phones, 500px and down) */
 @media only screen and (max-width: 500px) {
     .home-cn{
-      
         .cut-button{
             width: 200px;
             height: 48px;
@@ -128,6 +129,8 @@
     }
 
     .home-title{
+        display: flex;
+        flex-direction: column;
         align-items: center;
     }
 
@@ -137,7 +140,5 @@
             font-size: 1.5em;
         }
     }
-
-
 
 }
