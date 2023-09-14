@@ -1,12 +1,12 @@
-@mixin box-corner($width ,$height){
-    min-width: $width;
-    min-height: $height;
+@mixin box-corner($pad-left ,$pad-right,$border){
+    padding-left: $pad-left;
+    padding-right: $pad-right;
     text-align: center;
     background:
-      linear-gradient(to right, rgb(255, 255, 255) 5px, transparent 5px) 0 100%,
-      linear-gradient(to left, rgb(255, 255, 255) 5px, transparent 5px) 100% 0,
-      linear-gradient(to bottom, rgb(255, 255, 255) 5px, transparent 5px) 100% 0,
-      linear-gradient(to top, rgb(255, 255, 255) 5px, transparent 5px) 0 100%;
+      linear-gradient(to right, rgb(255, 255, 255) $border, transparent $border) 0 100%,
+      linear-gradient(to left, rgb(255, 255, 255) $border, transparent $border) 100% 0,
+      linear-gradient(to bottom, rgb(255, 255, 255) $border, transparent $border) 100% 0,
+      linear-gradient(to top, rgb(255, 255, 255) $border, transparent $border) 0 100%;
     background-repeat: no-repeat;
     background-size: 15px 15px;
 }
@@ -27,7 +27,7 @@
 }
 
 .home-tg{
-    @include box-corner(350px,50px )
+    @include box-corner(20px,20px,5px )
 }
 
 .home-cn{
@@ -74,8 +74,6 @@
         width: 50px;
         height: 50px;
         background-color: inherit;
-        // margin-left: 9px;
-        // border: 3px solid rgba(212, 213, 212, 0.3);
         border: 4px solid rgba(212, 213, 212, 0.3);
         margin-left: 7px;
       }
@@ -94,8 +92,13 @@
     justify-content: center;
     align-items: center;
     div{
-         margin-left: 5px;
+ mobile-styling
+    
         @include box-corner(fit-content,fit-content );
+
+         margin-left: 5px;   
+       
+
         padding-left: 15px;
         padding-right: 15px;
         p{
@@ -108,25 +111,34 @@
 
 
 
+
 // Media queries for responsive design ----->
 
 @media only screen and (max-width: 768px) {
     .home-cn{
         p{
         font-size: 1.5em;
-        }
+
+@media only screen and (max-width: 900px) {
+    .home-title{
+        flex-direction: column;
+
     }
 }
 
+
+// Media queries for responsive design ----->
 
 /* Extra small devices (phones, 500px and down) */
 @media only screen and (max-width: 500px) {
     .home-cn{
 
+
       p{
         font-size: 1em;
         margin-bottom: 30px;
       }
+
 
         .cut-button{
             width: 200px;
@@ -142,6 +154,7 @@
         display: flex;
         flex-direction: column;
         align-items: center;
+
         div{
             @include box-corner(120px,36px );
         }
@@ -149,10 +162,11 @@
           font-size: 1em;
         }
 
+
     }
 
     .home-tg{
-        @include box-corner(300px,50px );
+        @include box-corner(15px,15px ,3px);
         h1{
             font-size: 1.5em;
         }
