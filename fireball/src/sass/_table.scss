@@ -124,3 +124,13 @@ tbody>tr>td:nth-child(7) {
 tbody>tr>td:nth-child(8) {
     width: 20%;
 }
+
+
+@media (max-width: 700px) {
+  .pagination {
+
+    button {
+        font-size: 12px;
+    }
+  }
+}
