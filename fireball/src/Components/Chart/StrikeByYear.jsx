@@ -39,7 +39,7 @@ const StrikeByYearChart = () => {
         <YAxis dataKey="strikes" label={{ value: 'No. Of Strikes', angle: -90, position: 'insideLeft' , fontSize: 15}}/>
         <Tooltip />
         <Legend verticalAlign="bottom" iconType="plainline"/>
-        <Line type="monotone" dataKey="strikes" stroke="rgb(212, 213, 212)"  activeDot={{ r: 4 }}  />
+        <Line type="monotone" dataKey="strikes" stroke="#E8E251" activeDot={{ r: 4 }}  />
       </LineChart>
      </ResponsiveContainer>
      </>

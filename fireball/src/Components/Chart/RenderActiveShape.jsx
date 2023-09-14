@@ -23,7 +23,7 @@ const renderActiveShape = ({cx,cy,midAngle,innerRadius,outerRadius,startAngle,en
     // Returning ARC for active shape with text no. of strikes and composition percent
     return (
       <g>
-        <text x={cx} y={cy} dy={8} textAnchor="middle" fill={"#E8E251"} fontSize={"1em"}>
+        <text x={cx} y={cy} dy={8} textAnchor="middle" fill={"#fff"} fontSize={"1em"}>
           {payload.recclass}
         </text>
         <Sector
@@ -49,7 +49,7 @@ const renderActiveShape = ({cx,cy,midAngle,innerRadius,outerRadius,startAngle,en
           stroke={fill}
           fill="none"
         />
-        <circle cx={ex} cy={ey} r={2} fill={fill} stroke="none" />
+        <circle cx={ex} cy={ey} r={2} fill={fill} stroke="#888" />
         <text
           x={ex + (cos >= 0 ? 1 : -1) * 12}
           y={ey}
