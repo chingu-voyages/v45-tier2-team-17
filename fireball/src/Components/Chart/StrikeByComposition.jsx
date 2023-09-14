@@ -1,10 +1,13 @@
-import React, { useState, useCallback } from "react";
+import React ,{useState,useCallback, useEffect} from 'react'
 import { useGlobalContext } from "../../context";
 import { PieChart, Pie, ResponsiveContainer } from "recharts";
 import renderActiveShape from "./RenderActiveShape";
 
 const StrikeByComposition = () => {
   const { filteredData } = useGlobalContext();
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+
+ 
   let compositionMap = {};
 
   // Calculating Number of Strikes Per Year
@@ -35,23 +38,47 @@ const StrikeByComposition = () => {
     },
     [setActiveIndex]
   );
+ 
+
+  // This useEffect listens the window resize event and updates the windowWidth state . 
+  // This is required so that the Pie chart props innerRadius and outerRadius can be change with windows size
+  useEffect(()=>{
+    const handleResize = () => {
+      setWindowWidth(window.innerWidth);
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  },[])
 
   return (
-    <ResponsiveContainer width="100%" height={495}>
-      <PieChart>
-        <Pie
-          activeIndex={activeIndex}
-          activeShape={renderActiveShape}
-          data={compositionData}
-          innerRadius={100}
-          outerRadius={160}
-          fill="#888888"
-          dataKey="strikes"
-          nameKey="recclass"
-          onMouseEnter={onPieEnter}
-        />
-      </PieChart>
+
+    <>
+    <h3 className='composition-h3'>No. of Strikes By Composition</h3>
+    <ResponsiveContainer  width="100%"  height={495} className='piechart'> 
+    <PieChart  >
+      <Pie
+        activeIndex={activeIndex}
+        activeShape={renderActiveShape}
+        data={compositionData}
+        cx='50%'
+        cy={windowWidth>650 ? '45%':'35%'}
+        innerRadius={windowWidth>650 ?'40%' :'30%'}
+
+        fill="#c4af06"
+        dataKey="strikes"
+        nameKey="recclass"
+        stroke='#fff'
+
+    
+        onMouseEnter={onPieEnter}
+      />
+    </PieChart>
     </ResponsiveContainer>
+    </>
   );
 };
 

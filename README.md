@@ -1,5 +1,5 @@
 ## 🪐 Meteoros
-> A responsive app that allows the user to search for ....
+> A responsive app that allows the user to search for meteor data using the NASA API.
 > Live demo [_here_](#).
 
 ## Table of Contents
@@ -36,9 +36,8 @@
 ## Features
 
 <ul>
-  <li>As a user I can...</li>
-  <li>As a user I can...</li>
-  <li>As a user I can...</li>
+  <li>As a user I can search for meteor data by name</li>
+  <li>As a user I can filter year of strike, meteorite mass and composition</li>
 </ul>
  
 
@@ -62,10 +61,7 @@
 
 
 
-## To do:
-<ul>
-  <li>Make...</li></ul>
-
-
 ## Contact
- This project was developed by Aditi Deshpande, [Paulette-Zaldivar-Flores](https://paulettethedev.com/) , Dhruv Jadvani, [Shivangi Singh](https://github.com/Shivangi020), Zaved Hussain Sikdar and Rakha Randhikatama - feel free to contact us!
+
+ This project was developed by [Aditi Deshpande](https://github.com/Aditi002-holo/), [Paulette-Zaldivar-Flores](https://paulettethedev.com/), [Shivangi Singh](https://github.com/Shivangi020), Zaved Hussain Sikdar and [Rakha Randhikatama](https://github.com/rakharan) - feel free to contact us!
+
