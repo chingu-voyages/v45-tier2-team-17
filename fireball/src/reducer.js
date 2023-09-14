@@ -19,7 +19,9 @@ const reducer = (state, action) => {
     let newMaxMass = -1;
     let newCompositionOptions = ["all"];
     newData.forEach((item) => {
-      newMaxMass = Math.max(item.mass);
+      if (!isNaN(item.mass)) {
+        newMaxMass = Math.max(newMaxMass, item.mass);
+      }
       if (!newCompositionOptions.includes(item.recclass)) {
         newCompositionOptions.push(item.recclass);
       }
