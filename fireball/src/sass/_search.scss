@@ -28,6 +28,7 @@
         input,
         select {
           height: 30px;
+          cursor: pointer;
         }
         label {
           font-weight: 300;
@@ -39,6 +40,7 @@
         input {
           background: white;
           border-radius: 30px;
+          width: 100%;
         }
 
         select {
@@ -53,6 +55,15 @@
         input[type="range"] {
           accent-color: #e8e251;
         }
+
+        .input-container{
+          .range-container{
+            display: "flex"; 
+            justify-content: "space-between";
+            color: white;
+            font-size: 0.875rem;
+          }
+        }
       }
     }
     .form-btns {
@@ -66,6 +77,7 @@
         border-radius: 10px;
         font-weight: 400;
         font-size: 1rem;
+        cursor: pointer;
       }
       .btn-submit {
         color: white;
@@ -74,6 +86,7 @@
         background-color: white;
       }
     }
+
   }
 
   .close-button{

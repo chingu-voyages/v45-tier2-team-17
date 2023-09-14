@@ -19,6 +19,7 @@
         }
 
         th {
+            user-select: none;
             text-align: center;
             border: 1px solid #ffffff;
             background-color: rgba(116, 112, 112, 0.5);
@@ -76,11 +77,11 @@
 
     @media (min-width:600px) {
         width: 580px;
-        overflow: initial;
     }
-
+    
     @media (min-width:801px) {
         width: 780px;
+        overflow: initial;
     }
 
     @media (min-width:1025px) {
@@ -94,37 +95,24 @@
 
 /* below are css to adjust each table cell width */
 tbody>tr>td:nth-child(1) {
-    width: 20%;
-}
-
-tbody>tr>td:nth-child(2) {
-    width: 15%;
+    width: 140px;
 }
 
 tbody>tr>td:nth-child(3) {
-    width: 10%;
+    width: 45px;
 }
 
 tbody>tr>td:nth-child(4) {
-    width: 10%;
-}
-
-tbody>tr>td:nth-child(5) {
-    width: 10%;
+    width: 50px;
 }
 
 tbody>tr>td:nth-child(6) {
-    width: 10%;
+    width: 100px;
 }
 
 tbody>tr>td:nth-child(7) {
-    width: 10%;
+    width: 200px;
 }
-
-tbody>tr>td:nth-child(8) {
-    width: 20%;
-}
-
 
 @media (max-width: 700px) {
   .pagination {

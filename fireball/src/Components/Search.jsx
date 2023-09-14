@@ -19,14 +19,16 @@ const Search = () => {
   };
   return (
     <section className="form-container">
-      <div onClick={()=>setFilterPopup(false)} className="close-button">X</div>
+      <div onClick={() => setFilterPopup(false)} className="close-button">
+        X
+      </div>
       <form className="search-form" onSubmit={handleSubmit}>
         <div className="form-rows">
           {/* Search input */}
 
           <div className="form-row">
             <label htmlFor="name" className="form-label">
-              Name
+              Meteor Name
             </label>
             <input
               type="text"
@@ -44,16 +46,26 @@ const Search = () => {
             <label htmlFor="year" className="form-label">
               Year Of Strike
             </label>
-            <input
-              type="range"
-              min={1400}
-              max={2023}
-              value={year}
-              className="form-input"
-              id="year"
-              name="year"
-              onChange={updateFilters}
-            />
+            <div className="input-container">
+              <input
+                type="range"
+                min={1400}
+                max={2023}
+                value={year}
+                className="form-input"
+                id="year"
+                name="year"
+                onChange={updateFilters}
+                title={year}
+              />
+              <div
+                className="range-container"
+                style={{ display: "flex", justifyContent: "space-between" }}
+              >
+                <span title="Minimum Year">1400</span>
+                <span title="Maximum Mass">2023</span>
+              </div>
+            </div>
           </div>
 
           {/* Mass input */}
@@ -62,16 +74,26 @@ const Search = () => {
             <label htmlFor="mass" className="form-label">
               Meteorite Mass
             </label>
-            <input
-              type="range"
-              min={minMass}
-              max={maxMass}
-              value={mass}
-              className="form-input"
-              id="mass"
-              name="mass"
-              onChange={updateFilters}
-            />
+            <div className="input-container">
+              <input
+                type="range"
+                min={minMass}
+                max={maxMass}
+                value={mass}
+                className="form-input"
+                id="mass"
+                name="mass"
+                onChange={updateFilters}
+                title={mass}
+              />
+              <div
+                className="range-container"
+                style={{ display: "flex", justifyContent: "space-between" }}
+              >
+                <span title="Minimum Mass">{minMass}</span>
+                <span title="Maximum Mass">{maxMass}</span>
+              </div>
+            </div>
           </div>
 
           {/* Composition input */}

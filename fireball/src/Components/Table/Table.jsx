@@ -30,13 +30,6 @@ const Table = ({ data, columns }) => {
 
   return (
     <div className="table-container">
-      <input
-        type="text"
-        className="table-input"
-        value={filtering}
-        onChange={(e) => setFiltering(e.target.value)}
-        placeholder="Search for a meteor..."
-      />
       <table className="table">
         <thead className="table-head">
           {table.getHeaderGroups().map((headerGroup) => (
