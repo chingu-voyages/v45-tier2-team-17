@@ -28,6 +28,7 @@
         input,
         select {
           height: 30px;
+          cursor: pointer;
         }
         label {
           font-weight: 300;
@@ -66,6 +67,7 @@
         border-radius: 10px;
         font-weight: 400;
         font-size: 1rem;
+        cursor: pointer;
       }
       .btn-submit {
         color: white;
@@ -74,6 +76,7 @@
         background-color: white;
       }
     }
+
   }
 
   .close-button{
