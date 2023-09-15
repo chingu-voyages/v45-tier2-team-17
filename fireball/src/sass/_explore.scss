@@ -1,0 +1,33 @@
+.explore-page {
+  display: flex;
+  gap: 1rem;
+  min-height: 100vh;
+  color: white;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  margin: 120px 0 120px 0;
+
+  .apply-filter-btn {
+    border: none;
+    outline: none;
+    padding: 0.5em 1em;
+    text-transform: uppercase;
+    background: #323334;
+    border: 1px solid #FFBD1E;
+    border-radius: 3px;
+    color: #ffffff;
+    filter: drop-shadow(0px 2px 2px rgba(255, 255, 255, 0.338));
+    font-family: 'Rubik', sans-serif;
+    cursor: pointer;
+  }
+  
+  .apply-filter-btn:hover,
+  .apply-filter-btn:focus,
+  .apply-filter-btn:active {
+    background: #4e4f50;
+  }
+}
+
+

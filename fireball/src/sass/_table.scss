@@ -1,0 +1,124 @@
+.table-container {
+    width: 280px;
+    display: flex;
+    overflow-x: scroll;
+    flex-direction: column;
+    row-gap: 20px;
+    box-sizing: content-box;
+
+
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+
+        tr,
+        td {
+            border: 1px solid #ffffff;
+            text-align: center;
+        }
+
+        th {
+            user-select: none;
+            text-align: center;
+            border: 1px solid #ffffff;
+            background-color: rgba(116, 112, 112, 0.5);
+            >div{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+        }
+    }
+
+    .table-input {
+        padding: 10px;
+        border-radius: 5px;
+        outline: none;
+        border: none;
+    }
+
+    .pagination {
+        width: 100%;
+        display: flex;
+        column-gap: 1rem;
+
+        button {
+            padding: 5px 10px;
+            background: #323334;
+            border: 1px solid #FFBD1E;
+            border-radius: 3px;
+            color: #ffffff;
+            text-transform: uppercase;
+            filter: drop-shadow(0px 2px 2px rgba(255, 255, 255, 0.50));
+            font-family: 'Rubik', sans-serif;
+        }
+
+        button:hover,
+        button:focus {
+            background: #626465;
+        }
+
+        button:disabled {
+            background: hsl(200, 2%, 39%);
+            color: #808080;
+            border-color: rgb(249, 247, 247);
+
+        }
+    }
+
+    /* Media queries css to make table responsive
+
+
+*/
+    @media (min-width:481px) {
+        width: 450px;
+    }
+
+    @media (min-width:600px) {
+        width: 580px;
+    }
+    
+    @media (min-width:801px) {
+        width: 780px;
+        overflow: initial;
+    }
+
+    @media (min-width:1025px) {
+        width: 900px;
+    }
+
+    @media (min-width:1281px) {
+        width: 1020px;
+    }
+}
+
+/* below are css to adjust each table cell width */
+tbody>tr>td:nth-child(1) {
+    width: 140px;
+}
+
+tbody>tr>td:nth-child(3) {
+    width: 45px;
+}
+
+tbody>tr>td:nth-child(4) {
+    width: 50px;
+}
+
+tbody>tr>td:nth-child(6) {
+    width: 100px;
+}
+
+tbody>tr>td:nth-child(7) {
+    width: 200px;
+}
+
+@media (max-width: 700px) {
+  .pagination {
+
+    button {
+        font-size: 12px;
+    }
+  }
+}
