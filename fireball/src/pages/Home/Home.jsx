@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useGlobalContext } from "../../context";
 
 const Home = () => {
+  document.title = "Meteoros 🪐| Home";
+
 const {data} = useGlobalContext()
 const totalStrikes = data.length;
 

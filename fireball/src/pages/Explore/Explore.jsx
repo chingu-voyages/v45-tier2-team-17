@@ -5,6 +5,8 @@ import Table from "../../Components/Table/Table";
 import Modal from "../../Components/Modal/Modal";
 
 const Explore = () => {
+  document.title = "Meteoros 🪐| Explore";
+
   const { filteredData, filterPopup, setFilterPopup } = useGlobalContext();
 
   /** @type import('@tanstack/react-table').ColumnDef<any> */
