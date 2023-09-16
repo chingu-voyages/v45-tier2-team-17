@@ -7,7 +7,9 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  margin: 120px 0 120px 0;
+  @media (max-width:1023px) {
+    margin: 100px 0;
+  }
 
   .apply-filter-btn {
     border: none;
