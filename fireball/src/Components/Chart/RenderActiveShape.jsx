@@ -24,7 +24,7 @@ const renderActiveShape = ({cx,cy,midAngle,innerRadius,outerRadius,startAngle,en
     return (
       <g>
 
-        <text x={cx} y={cy} dy={8} textAnchor="middle" fill={"#fff"} fontSize={"1em"}>
+        <text x={cx} y={cy} dy={8} textAnchor="middle" fill={"#fff"} fontSize={window.innerWidth>650?"1em":'50%'}>
           {payload.recclass}
         </text>
         <Sector

@@ -58,22 +58,20 @@ const StrikeByComposition = () => {
 
     <>
     <h3 className='composition-h3'>No. of Strikes By Composition</h3>
-    <ResponsiveContainer  width="100%"  height={495} className='piechart'> 
+    <ResponsiveContainer  width="100%"  height={windowWidth>650?495:200} className='piechart' > 
     <PieChart  >
       <Pie
         activeIndex={activeIndex}
         activeShape={renderActiveShape}
         data={compositionData}
         cx='50%'
-        cy={windowWidth>650 ? '45%':'35%'}
+        cy='50%'
         innerRadius={windowWidth>650 ?'40%' :'30%'}
-
+        outerRadius={windowWidth>650 ?'80%' :'50%'}
         fill="#c4af06"
         dataKey="strikes"
         nameKey="recclass"
         stroke='#fff'
-
-    
         onMouseEnter={onPieEnter}
       />
     </PieChart>
