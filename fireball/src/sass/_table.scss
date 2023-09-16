@@ -79,9 +79,13 @@
         width: 580px;
     }
     
+    @media (min-width:768px) {
+        width: 700px;
+        overflow: initial;
+    }
+
     @media (min-width:801px) {
         width: 780px;
-        overflow: initial;
     }
 
     @media (min-width:1025px) {
