@@ -62,7 +62,7 @@ const reducer = (state, action) => {
     const { data, filters } = state;
     const { name, year, mass, maxMass, composition } = filters;
     let tempData = [...data];
-    console.log({composition})
+    
     if (name) {
       tempData = tempData.filter((item) =>
         item.name.toLowerCase().includes(name.toLowerCase())
@@ -82,7 +82,7 @@ const reducer = (state, action) => {
         (item) => Number(item.year?.slice(0, 4)) <= year
       );
     }
-    console.log(tempData);
+   
     return { ...state, filteredData: tempData };
   }
 };

@@ -24,7 +24,7 @@ const StrikeByYearChart = () => {
     strikes: strikeMap[year]
   }));
 
-  console.log(strikeData)
+ 
 
   return (
     <>
