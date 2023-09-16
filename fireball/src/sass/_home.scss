@@ -1,0 +1,144 @@
+// This mixin is created to create angle corner around meteorite strike and heading Meteroite Explorer
+@mixin box-corner($pad-left ,$pad-right,$border){
+    padding-left: $pad-left;
+    padding-right: $pad-right;
+    text-align: center;
+    background:
+      linear-gradient(to right, rgb(255, 255, 255) $border, transparent $border) 0 100%,
+      linear-gradient(to left, rgb(255, 255, 255) $border, transparent $border) 100% 0,
+      linear-gradient(to bottom, rgb(255, 255, 255) $border, transparent $border) 100% 0,
+      linear-gradient(to top, rgb(255, 255, 255) $border, transparent $border) 0 100%;
+    background-repeat: no-repeat;
+    background-size: 15px 15px;
+}
+
+
+.home-cn{
+    display: flex;
+    flex-direction: column;
+    flex: 5;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    color: white;
+    text-align: center;
+    background-image: url("../assets/Background Image.jpg");
+    background-size: cover;
+
+}
+
+.home-tg{
+    @include box-corner(20px,20px,5px )
+}
+
+.home-cn{
+    h1{
+        font-weight: 300;
+        letter-spacing: .105em;
+        margin: 0;
+    }
+    .home-p{
+        margin-top: 50px;
+    }
+    p{
+        font-size: 1.2em;
+        font-weight: 300;
+        letter-spacing: 0.12em;
+    }
+
+    .cut-button{
+        position:relative;
+        width: 233px;
+        height: 48px;
+        clip-path: polygon(20% 0%, 100% 0px, 100% 20%, 100.00% 63.34%, 92.44% 97.92%, 20% 100%, 0px 100%, 0px 0px);
+    }
+    a{
+        padding-top: 10px;
+        display: block;
+        height: 48px;
+        background-color: #272A29;
+        border: 4px solid rgba(212, 213, 212, 0.3);
+        color: #fff;
+        font-weight: 600;
+        letter-spacing: .12em;
+        text-decoration: none;
+        box-sizing: border-box;
+    }
+
+
+      .cut-button::after {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 90%;
+        transform: rotate(45deg);
+        width: 50px;
+        height: 50px;
+        background-color: inherit;
+        border: 4px solid rgba(212, 213, 212, 0.3);
+        margin-left: 7px;
+      }
+
+      a:hover{
+        background-color: rgba(212, 213, 212, 0.3);
+        border: 4px solid rgba(232, 251, 232, 0.505);
+      }
+
+
+}
+
+.home-title{
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    div{
+        margin-left: 5px;   
+        @include box-corner(10px,10px ,2px);
+        padding-left: 15px;
+        padding-right: 15px;
+        p{
+            margin-top: 0px;
+            margin-bottom: 0px;
+        }
+    }
+}
+
+
+
+@media only screen and (max-width: 900px) {
+    .home-title{
+        flex-direction: column;
+    }
+}
+
+
+// Media queries for responsive design ----->
+
+/* Extra small devices (phones, 500px and down) */
+@media only screen and (max-width: 500px) {
+    .home-cn{
+        .cut-button{
+            width: 200px;
+            height: 48px;
+        }
+
+        .cut-button::after{
+            margin-left: 5px;
+        }
+    }
+
+    .home-title{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .home-tg{
+        @include box-corner(15px,15px ,3px);
+        h1{
+            font-size: 1.5em;
+        }
+    }
+
+}

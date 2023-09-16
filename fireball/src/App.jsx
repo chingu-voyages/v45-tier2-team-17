@@ -7,16 +7,14 @@ import ErrorNotFound from "./pages/ErrorNotFound";
 
 function App() {
   return (
-    <>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="/explore" element={<Summary />} />
-          <Route path="/summary" element={<Explore />} />
-          <Route path="*" element={<ErrorNotFound />} />
-        </Route>
-      </Routes>
-    </>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+        <Route path="/summary" element={<Summary />} />
+        <Route path="/explore" element={<Explore />} />
+        <Route path="*" element={<ErrorNotFound />} />
+      </Route>
+    </Routes>
   );
 }
 
