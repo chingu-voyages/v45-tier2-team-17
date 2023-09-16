@@ -5,6 +5,8 @@ import Metrics from "../../Components/Metrics";
 import { useGlobalContext } from "../../context";
 
 const Summary = () => {
+  document.title = "Meteoros 🪐| Summary";
+
   const { filteredData } = useGlobalContext();
 
   return (
