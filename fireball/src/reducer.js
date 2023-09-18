@@ -22,11 +22,15 @@ const reducer = (state, action) => {
       if (!isNaN(item.mass)) {
         newMaxMass = Math.max(newMaxMass, item.mass);
       }
+      // Extracting year from 'item.year'
+      if(item.year && typeof item.year === 'string') {
+          const year = item.year.split('-')[0]; // We only take the year part
+          item.year = parseInt(year); // Then convert it to a Integer Number
+      }
       if (!newCompositionOptions.includes(item.recclass)) {
         newCompositionOptions.push(item.recclass);
       }
     });
-
     return {
       ...state,
       isDataLoading: false,
@@ -79,7 +83,7 @@ const reducer = (state, action) => {
     }
     if (year < 2023) {
       tempData = tempData.filter(
-        (item) => Number(item.year?.slice(0, 4)) <= year
+        (item) => item.year <= year
       );
     }
    
