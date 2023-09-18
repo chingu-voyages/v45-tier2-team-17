@@ -39,10 +39,9 @@ export const AppProvider = ({ children }) => {
     dispatch({ type: GET_DATA_BEGIN });
     try {
       const { data } = await axios.get(url);
-      console.log(data);
+     
       dispatch({ type: GET_DATA_SUCCESS, payload: data });
     } catch (error) {
-      console.log(error.message);
       dispatch({ type: GET_DATA_ERROR });
     }
   };

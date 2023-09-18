@@ -10,7 +10,7 @@ const StrikeByYearChart = () => {
 
 //   Calculating Number of Strikes Per Year 
   filteredData.forEach(element => {
-    let year = element.year?.slice(0, 4)  ;
+    let year = element.year;
     if(strikeMap[year]){
         strikeMap[year]++;
     }else{
@@ -23,9 +23,7 @@ const StrikeByYearChart = () => {
     year,
     strikes: strikeMap[year]
   }));
-
-  console.log(strikeData)
-
+  
   return (
     <>
     <h3 className="year-h3">No. of Strikes per year</h3>
