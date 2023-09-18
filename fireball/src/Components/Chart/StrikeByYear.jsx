@@ -23,7 +23,7 @@ const StrikeByYearChart = () => {
     year,
     strikes: strikeMap[year]
   }));
-
+  
   return (
     <>
     <h3 className="year-h3">No. of Strikes per year</h3>
