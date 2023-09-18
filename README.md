@@ -1,6 +1,6 @@
 ## 🪐 Meteoros
 > A responsive app that allows the user to search for meteor data using the NASA API.
-> Live demo [_here_](#).
+> Live demo [_here_](https://meteoros-fireball.netlify.app/explore).
 
 ## Table of Contents
 * [General Info](#general-information)
@@ -13,13 +13,14 @@
 
 
 ## General Information
-<ul><li>The goal of this project was to...</li></ul>
+<ul><li>The goal of this project was to provide a user friendly way for searching meteor information.</li></ul>
 
 
 ## Technologies Used
 <ul>
   <li>HTML5</li>
   <li>CSS3</li>
+  <li>JavaScript</li>
   <li>NASA API</li>
   <li>Responsive Web Development</li> </ul>
   
@@ -44,6 +45,7 @@
 
 ## Screenshots
 
+<img width="1440" alt="Screen Shot 2566-09-18 at 17 33 10" src="https://github.com/chingu-voyages/v45-tier2-team-17/assets/96970580/a6973db2-d0cb-4479-9912-33a62eb2c0dc">
 
 
 
@@ -57,7 +59,7 @@
 
 ## Room for Improvement
 <ul>
-  <li>Improve...</li></ul>
+  <li>Improve responsiveness for all screen types</li></ul>
 
 
 
