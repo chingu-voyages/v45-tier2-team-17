@@ -1,5 +1,5 @@
 import axios from "axios";
-import React, { useContext, useEffect, useReducer, useState } from "react";
+import React, { useContext, useEffect, useMemo, useReducer, useState } from "react";
 import {
   CLEAR_FILTERS,
   FILTER_DATA,
@@ -69,10 +69,18 @@ export const AppProvider = ({ children }) => {
   
   const [filterPopup, setFilterPopup] = useState(false)
 
+  const value = useMemo(() => ({
+    ...state, 
+    updateFilters, 
+    clearFilters, 
+    filterData, 
+    fetchData, 
+    filterPopup, 
+    setFilterPopup
+  }), [state, updateFilters, clearFilters, filterData, fetchData, filterPopup, setFilterPopup]);
+  
   return (
-    <AppContext.Provider
-    value={{ ...state, updateFilters, clearFilters, filterData, fetchData, filterPopup, setFilterPopup }}
-    >
+    <AppContext.Provider value={value}>
       {children}
     </AppContext.Provider>
   );
