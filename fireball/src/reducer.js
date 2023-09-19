@@ -7,87 +7,109 @@ import {
   UPDATE_FILTERS,
 } from "./actions";
 
-const reducer = (state, action) => {
-  if (action.type === GET_DATA_BEGIN) {
-    return { ...state, isDataLoading: true };
-  }
-  if (action.type === GET_DATA_ERROR) {
-    return { ...state, isDataLoading: false, dataError: true };
-  }
-  if (action.type === GET_DATA_SUCCESS) {
-    const newData = action.payload;
-    let newMaxMass = -1;
-    let newCompositionOptions = ["all"];
-    newData.forEach((item) => {
-      if (!isNaN(item.mass)) {
-        newMaxMass = Math.max(newMaxMass, item.mass);
-      }
-      // Extracting year from 'item.year'
-      if(item.year && typeof item.year === 'string') {
-          const year = item.year.split('-')[0]; // We only take the year part
-          item.year = parseInt(year); // Then convert it to a Integer Number
-      }
-      if (!newCompositionOptions.includes(item.recclass)) {
-        newCompositionOptions.push(item.recclass);
-      }
-    });
-    return {
-      ...state,
-      isDataLoading: false,
-      dataError: false,
-      data: newData,
-      filteredData: newData,
-      filters: {
-        ...state.filters,
-        maxMass: newMaxMass,
-        mass: newMaxMass,
-        compositionOptions: newCompositionOptions,
-      },
-    };
-  }
-  if (action.type === UPDATE_FILTERS) {
-    const { name, value } = action.payload;
-    return { ...state, filters: { ...state.filters, [name]: value } };
-  }
-  if (action.type === CLEAR_FILTERS) {
-    return {
-      ...state,
-      filters: {
-        ...state.filters,
-        name: "",
-        year: 2023,
-        minMass: 0,
-        mass: state.filters.maxMass,
-        composition: "",
-      },
-    };
-  }
-  if (action.type === FILTER_DATA) {
-    const { data, filters } = state;
-    const { name, year, mass, maxMass, composition } = filters;
-    let tempData = [...data];
-    
-    if (name) {
-      tempData = tempData.filter((item) =>
-        item.name.toLowerCase().includes(name.toLowerCase())
-      );
-    }
+const handleGetDataBegin = (state) => {
+  return { ...state, isDataLoading: true };
+};
 
-    if (composition && composition !== "all") {
-      tempData = tempData.filter(
-        (item) => item.recclass.toLowerCase() === composition.toLowerCase()
-      );
+const handleGetDataError = (state) => {
+  return { ...state, isDataLoading: false, dataError: true };
+};
+
+const handleGetDataSuccess = (state, action) => {
+  const newData = action.payload;
+  let newMaxMass = -1;
+  let newCompositionOptions = ["all"];
+  newData.forEach((item) => {
+    if (!isNaN(item.mass)) {
+      newMaxMass = Math.max(newMaxMass, item.mass);
     }
-    if (mass !== maxMass) {
-      tempData = tempData.filter((item) => item.mass <= mass);
+    if(item.year && typeof item.year === 'string') {
+      const year = item.year.split('-')[0];
+      item.year = parseInt(year);
     }
-    if (year < 2023) {
-      tempData = tempData.filter(
-        (item) => item.year <= year
-      );
+    if (!newCompositionOptions.includes(item.recclass)) {
+      newCompositionOptions.push(item.recclass);
     }
-   
-    return { ...state, filteredData: tempData };
+  });
+  return {
+    ...state,
+    isDataLoading: false,
+    dataError: false,
+    data: newData,
+    filteredData: newData,
+    filters: {
+      ...state.filters,
+      maxMass: newMaxMass,
+      mass: newMaxMass,
+      compositionOptions: newCompositionOptions,
+    },
+  };
+};
+
+const handleUpdateFilters = (state, action) => {
+  const { name, value } = action.payload;
+  return { ...state, filters: { ...state.filters, [name]: value } };
+};
+
+const handleClearFilters = (state) => {
+  return {
+    ...state,
+    filters: {
+      ...state.filters,
+      name: "",
+      year: 2023,
+      minMass: 0,
+      mass: state.filters.maxMass,
+      composition: "",
+    },
+  };
+};
+
+const handleFilterData = (state) => {
+  const { data, filters } = state;
+  const { name, year, mass, maxMass, composition } = filters;
+  let tempData = [...data];
+  
+  if (name) {
+    tempData = tempData.filter((item) =>
+      item.name.toLowerCase().includes(name.toLowerCase())
+    );
+  }
+
+  if (composition && composition !== "all") {
+    tempData = tempData.filter(
+      (item) => item.recclass.toLowerCase() === composition.toLowerCase()
+    );
+  }
+  if (mass !== maxMass) {
+    tempData = tempData.filter((item) => item.mass <= mass);
+  }
+  if (year < 2023) {
+    tempData = tempData.filter(
+      (item) => item.year <= year
+    );
+  }
+  console.log({tempData})
+  
+  return { ...state, filteredData: tempData };
+};
+
+const reducer = (state, action) => {
+  switch (action.type) {
+    case GET_DATA_BEGIN:
+      return handleGetDataBegin(state);
+    case GET_DATA_ERROR:
+      return handleGetDataError(state);
+    case GET_DATA_SUCCESS:
+      return handleGetDataSuccess(state, action);
+    case UPDATE_FILTERS:
+      return handleUpdateFilters(state, action);
+    case CLEAR_FILTERS:
+      return handleClearFilters(state);
+    case FILTER_DATA:
+      return handleFilterData(state);
+    default:
+      return state;
   }
 };
 
